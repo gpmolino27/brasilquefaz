@@ -226,6 +226,38 @@ footer b{color:var(--ink)}
 .rule{margin:32px 0 8px;padding:18px 18px 16px;border-left:4px solid var(--accent);background:var(--surface,transparent);border-radius:0 12px 12px 0;box-shadow:inset 0 0 0 1px var(--line,rgba(0,0,0,.08))}
 .rule h2{margin:2px 0 8px;font-size:1.25rem}
 .rule p:last-child{margin:0}
+.ratio{margin:20px 0 0;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px}
+.ratio .cap{font-family:var(--ui);font-size:13px;color:var(--muted);margin:0 0 12px}
+.ratio ol{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ratio li{display:grid;grid-template-columns:52px 44px minmax(0,1fr);align-items:center;gap:8px;font-family:var(--ui)}
+.ratio b{font-family:var(--display);font-stretch:115%;font-weight:800;font-size:24px;color:var(--brand);font-variant-numeric:tabular-nums}
+.ratio li:last-child b{color:var(--accent)}
+.ratio span{font-size:13px;color:var(--muted)}
+.ratio i{display:block;height:10px;border-radius:5px;background:var(--brand);width:var(--w)}
+.ratio li:nth-child(2) i{opacity:.7}.ratio li:last-child i{background:var(--accent)}
+.trust{display:grid;grid-template-columns:88px minmax(0,1fr);gap:14px;align-items:baseline;margin:16px 0 4px;padding:14px 0;border-block:1px solid var(--line)}
+.trust .fig{font-family:var(--display);font-stretch:115%;font-weight:800;font-size:28px;color:var(--accent)}
+.trust p{margin:0;font-size:16px;line-height:1.45}
+#v-inicio .cta{font-family:var(--ui);font-weight:700;text-decoration:none}
+.goals .tag{display:block;font-style:normal;font-family:var(--ui);font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:2px}
+.home-tl{list-style:none;margin:16px 0 0;padding:0 0 0 22px;position:relative}
+.home-tl .phase p{margin:0;font-size:14.5px}
+.home-tl .phase.now{border-color:var(--brand);background:var(--brand-soft)}
+.home-tl .phase:not(.now)::before{background:var(--muted)}
+.home-tl .years,.home-tl h4{font-family:var(--ui)}
+.home-tl ul{list-style:none;padding:0}
+.home-tl ul li{margin:0 0 4px}
+.home-tl ul b{font-family:var(--ui);color:var(--brand);margin-right:4px}
+.princ{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px;counter-reset:p}
+.princ li{counter-increment:p;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px 12px 50px;position:relative}
+.princ li::before{content:counter(p);position:absolute;left:14px;top:11px;width:24px;height:24px;border-radius:50%;background:var(--brand);color:var(--brand-ink);font-family:var(--ui);font-weight:700;font-size:13px;display:grid;place-items:center}
+.princ b{font-family:var(--ui);font-size:16px}
+.princ p{margin:2px 0 0;font-size:15px;line-height:1.45}
+.starts{list-style:none;margin:16px 0 8px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.starts a{display:block;height:100%;box-sizing:border-box;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--ink)}
+.starts b{display:block;font-family:var(--display);font-stretch:110%;font-weight:800;font-size:17px;color:var(--brand)}
+.starts span{font-family:var(--ui);font-size:13px;color:var(--muted)}
+.page>.meter{margin-inline:0}
 </style>
 
 </head>
@@ -256,41 +288,58 @@ footer b{color:var(--ink)}
   <div class="hero">
     <p class="eyebrow">Programa de país · 2027 a 2040</p>
     <h1>Brasil<br>que <span>Faz</span></h1>
-    <p class="sub">Um plano para dobrar o peso da indústria na economia e fazer cada área do governo trabalhar a favor dela.</p>
+    <p class="sub">Um plano de país para 2027 a 2040, a primeira etapa de uma visão até 2070. Começa por quem é o brasileiro e segue área por área, com metas que dá para medir e cobrar.</p>
   </div>
 
-  <div class="meter" role="img" aria-label="Indústria de transformação: cerca de 11% do PIB hoje, meta de 18% em 2040; nos anos 1980 foi de 20% a 25%">
-    <h2>Indústria de transformação, em % do PIB</h2>
-    <p class="cap">De onde partimos e aonde o plano quer chegar</p>
-    <div class="track" aria-hidden="true">
-      <div class="rail"></div><div class="past"></div><div class="now"></div><div class="goal"></div>
-      <div class="tick" style="left:calc(52% - 1px)"></div><div class="tick" style="left:calc(62% - 1px)"></div>
-    </div>
-    <div class="scale" aria-hidden="true"><span>0%</span><span>5%</span><span>10%</span><span>15%</span><span>20%</span><span>25%</span></div>
-    <ul class="legend">
-      <li><span class="sw" style="background:var(--brand)"></span><span><b>11%</b><br>hoje</span></li>
-      <li><span class="sw" style="background:var(--ink)"></span><span><b>13 · 15,5%</b><br>revisões 2030 e 2035</span></li>
-      <li><span class="sw" style="background:var(--accent)"></span><span><b>18%</b><br>meta 2040</span></li>
-      <li><span class="sw" style="background:var(--muted);opacity:.5"></span><span><b>20–25%</b><br>anos 1980</span></li>
-    </ul>
+  <h2 class="section-title">Quem somos e quem seremos</h2>
+  <p>Antes de qualquer política, o plano olha para a população. O Brasil está envelhecendo rápido, e os próximos 15 anos são a última fase com muita gente em idade de trabalhar para cada idoso.</p>
+  <div class="ratio" role="img" aria-label="Pessoas em idade de trabalhar para cada pessoa com 65 anos ou mais: 5,8 hoje, 3,7 em 2040 e 1,8 em 2070">
+    <p class="cap">Pessoas em idade de trabalhar para cada pessoa com 65 anos ou mais</p>
+    <ol aria-hidden="true">
+      <li><b>5,8</b><span>hoje</span><i style="--w:100%"></i></li>
+      <li><b>3,7</b><span>2040</span><i style="--w:64%"></i></li>
+      <li><b>1,8</b><span>2070</span><i style="--w:31%"></i></li>
+    </ol>
   </div>
+  <div class="trust">
+    <span class="fig">7%</span>
+    <p>dos brasileiros acham que dá para confiar na maioria das pessoas, a menor taxa da América Latina. A demografia diz quantos seremos; a confiança diz como vamos agir.</p>
+  </div>
+  <p><a class="cta" href="#brasileiro">Ler Quem é o brasileiro →</a></p>
 
-  <aside class="rule start"><p class="eyebrow">Por onde o plano começa</p><h2>Pela população</h2><p>Antes de qualquer política, a página Quem é o brasileiro: hoje, 2040 e 2070 responde a três perguntas: quem é o brasileiro hoje, quem ele será nos próximos anos e para o que o país já deveria estar se preparando. Ela mostra que 2027 a 2040 é a última janela com população em idade de trabalhar estável e enquadra o Brasil que Faz como a primeira etapa de uma visão até 2070, com planos de 15 anos e revisões a cada 5. Todas as metas por aluno, trabalhador ou habitante das outras páginas usam os números dessa página.</p><p><a class="cta" href="#brasileiro">Ler Quem é o brasileiro →</a></p></aside>
-
-  <h2 class="section-title">Cinco metas para 2040</h2>
+  <h2 class="section-title">O que muda até 2040</h2>
+  <p>Uma meta de cada área, para dar a medida do plano.</p>
   <ol class="goals">
-    <li><span class="fig">18%</span><span class="txt">do PIB vindo da indústria de transformação<small>hoje, cerca de 11%</small></span></li>
-    <li><span class="fig">+60%</span><span class="txt">de produtividade industrial por trabalhador<small>em relação a 2026</small></span></li>
-    <li><span class="fig">45%</span><span class="txt">das exportações em bens de média e alta tecnologia<small>hoje, cerca de 20%</small></span></li>
-    <li><span class="fig">2%</span><span class="txt">do PIB investido em pesquisa e desenvolvimento, metade privado<small>hoje, cerca de 1,2%</small></span></li>
-    <li><span class="fig">3 mi</span><span class="txt">de novos empregos industriais formais, com salário acima da média<small>acumulado até 2040</small></span></li>
+    <li><span class="fig">95%</span><span class="txt"><em class="tag">Educação</em>das crianças alfabetizadas ao fim do 2º ano<small>hoje, 66%</small></span></li>
+    <li><span class="fig">70%</span><span class="txt"><em class="tag">Saúde</em>do que o SUS compra produzido no Brasil<small>hoje, cerca de 40%</small></span></li>
+    <li><span class="fig">18%</span><span class="txt"><em class="tag">Indústria</em>do PIB vindo da indústria de transformação<small>hoje, cerca de 11%</small></span></li>
+    <li><span class="fig">15%</span><span class="txt"><em class="tag">Confiança</em>dos brasileiros confiando na maioria das pessoas, a média da América Latina<small>hoje, 7%</small></span></li>
   </ol>
-  <p class="note">Os números de partida são aproximados e ainda estão sendo conferidos com IBGE, MDIC e MCTI.</p>
+  <p class="note">Os números de partida são aproximados e ainda estão sendo conferidos com as fontes oficiais.</p>
 
-  <aside class="rule"><p class="eyebrow">Regra do programa</p><h2>Continuidade</h2><p>Toda área parte do que já existe no Brasil: os programas em andamento, seus resultados e suas falhas. Nada é proposto como novo se já está acontecendo; o que já funciona é mantido e ampliado, o que falha é corrigido com nome e número, e as referências de fora servem para evoluir o que o país já faz, não para substituí-lo. Por isso cada página abre com uma seção "De onde partimos", e o plano industrial começa pela Nova Indústria Brasil.</p></aside>
+  <h2 class="section-title">Linha do tempo</h2>
+  <p>A transição demográfica do Brasil leva 45 anos. O plano trabalha em etapas de 15 anos, com revisão pública a cada 5.</p>
+  <ol class="timeline home-tl">
+    <li class="phase now"><p class="years">Fase 1 · 2027–2040</p><h4>A última janela</h4>
+      <ul>
+        <li><b>2027</b> o plano começa</li>
+        <li><b>2030</b> primeira revisão: indústria em 13% do PIB, alfabetização em 80%</li>
+        <li><b>2035</b> segunda revisão: indústria em 15,5%; a população em idade de trabalhar para de crescer</li>
+        <li><b>2040</b> metas finais desta etapa</li>
+      </ul></li>
+    <li class="phase"><p class="years">Fase 2 · 2041–2055</p><h4>O declínio</h4><p>A população em idade de trabalhar passa a perder cerca de 1 milhão de pessoas por ano.</p></li>
+    <li class="phase"><p class="years">Fase 3 · 2056–2070</p><h4>Sociedade superenvelhecida</h4><p>1,8 pessoa em idade de trabalhar para cada idoso.</p></li>
+  </ol>
 
-  <h2 class="section-title">Uma área de cada vez</h2>
-  <p>A industrialização é o eixo. Cada área de governo tem uma página que explica como ela evolui e como apoia esse eixo, sempre no mesmo roteiro: diagnóstico, medidas, metas, conexões com as outras áreas e riscos. A ordem vai das áreas que mais destravam a indústria para as que mais dependem dela.</p>
+  <h2 class="section-title">Como o plano funciona</h2>
+  <ol class="princ">
+    <li><b>População primeiro</b><p>Toda meta por aluno, trabalhador ou habitante usa os números de <a href="#brasileiro">Quem é o brasileiro</a>.</p></li>
+    <li><b>Continuidade</b><p>Toda área parte do que já existe. O que funciona é mantido e ampliado, o que falha é corrigido com nome e número, e nada é proposto como novo se já está acontecendo.</p></li>
+    <li><b>Medir e cobrar</b><p>Cada proposta tem código, número, quem paga e riscos, e as metas passam por revisões públicas em 2030 e 2035.</p></li>
+  </ol>
+
+  <h2 class="section-title">As áreas</h2>
+  <p>O plano cobre 14 áreas de governo, e a indústria é o eixo que as conecta. Cada área tem uma página com o mesmo roteiro: diagnóstico, medidas, metas, conexões com as outras áreas e riscos.</p>
   <ul class="areas">
 <li class="area ready"><a href="#brasileiro"><span class="n">↳</span><span class="t"><b>Quem é o brasileiro</b><span>Hoje, 2040 e 2070: a população que define cada meta</span></span><span class="st">Ler</span></a></li>
 <li class="area ready"><a href="#industria"><span class="n">00</span><span class="t"><b>Plano industrial 2027–2040</b><span>Define setores, metas e cronograma que as outras áreas apoiam</span></span><span class="st">Ler</span></a></li>
@@ -310,7 +359,14 @@ footer b{color:var(--ink)}
 <li class="area"><div><span class="n">13</span><span class="t"><b>Gestão pública e instituições</b><span>Um Estado capaz de executar, medir e corrigir o plano</span></span><span class="st">Em breve</span></div></li>
   </ul>
 
-  <aside class="rule start"><p class="eyebrow">Como ler este plano</p><h2>Do resumo às propostas</h2><p>Cada página começa com um "Resumo em 2 minutos", em linguagem simples, para quem quer só a ideia e os números principais. Depois vêm o que já existe, o diagnóstico, as medidas, as metas e os riscos, para quem quer entender como funciona. No fim de cada página as propostas estão em fichas numeradas (IND-01, EDU-01, SAU-01 e assim por diante), cada uma com a frase do que muda, o número, para quem é, de onde partimos, como funciona, quem paga e os riscos. Siglas e termos técnicos estão explicados em <a href="#palavras">Palavras do plano</a>.</p></aside>
+  <h2 class="section-title">Por onde começar</h2>
+  <p>Cada página abre com um resumo de 2 minutos. No fim estão as propostas em fichas numeradas, cada uma com o que muda, o número, para quem é, quem paga e os riscos.</p>
+  <ul class="starts">
+    <li><a href="#industria" data-target="industria-propostas"><b>IND-01 a 11</b><span>Propostas da indústria</span></a></li>
+    <li><a href="#educacao" data-target="educacao-propostas"><b>EDU-01 a 09</b><span>Propostas da educação</span></a></li>
+    <li><a href="#saude" data-target="saude-propostas"><b>SAU-01 a 09</b><span>Propostas da saúde</span></a></li>
+    <li><a href="#palavras"><b>Glossário</b><span>Siglas e termos do plano</span></a></li>
+  </ul>
 </section>
 
 <section class="view page" id="v-brasileiro" data-view="brasileiro" hidden>
@@ -509,6 +565,21 @@ footer b{color:var(--ink)}
 <section class="view page" id="v-industria" data-view="industria" hidden>
 <header class="page-head"><p class="eyebrow">O eixo central</p><h1>Plano industrial 2027–2040</h1></header>
 <details class="toc"><summary>Nesta página <span>14 seções</span></summary><ol><li><a href="#industria" data-target="industria-resumo-em-2-minutos">Resumo em 2 minutos</a></li><li><a href="#industria" data-target="industria-sumario-executivo">Sumário executivo</a></li><li><a href="#industria" data-target="industria-diagnostico">Diagnóstico</a></li><li><a href="#industria" data-target="industria-principios-e-eixos-estrategicos">Princípios e eixos estratégicos</a></li><li><a href="#industria" data-target="industria-setores-prioritarios-missoes">Setores prioritários (missões)</a></li><li><a href="#industria" data-target="industria-financiamento">Financiamento</a></li><li><a href="#industria" data-target="industria-politica-tecnologica-e-educacional">Política tecnológica e educacional</a></li><li><a href="#industria" data-target="industria-infraestrutura">Infraestrutura</a></li><li><a href="#industria" data-target="industria-politica-comercial-macroeconomica-e-ambi">Política comercial, macroeconômica e ambiente de negócios</a></li><li><a href="#industria" data-target="industria-metas-e-cronograma">Metas e cronograma</a></li><li><a href="#industria" data-target="industria-governanca-monitoramento-e-avaliacao">Governança, monitoramento e avaliação</a></li><li><a href="#industria" data-target="industria-riscos-e-mitigacao">Riscos e mitigação</a></li><li><a href="#industria" data-target="industria-casos-de-referencia-e-leituras">Casos de referência e leituras</a></li><li><a href="#industria" data-target="industria-propostas">Propostas</a></li></ol></details>
+  <div class="meter" role="img" aria-label="Indústria de transformação: cerca de 11% do PIB hoje, meta de 18% em 2040; nos anos 1980 foi de 20% a 25%">
+    <h2>Indústria de transformação, em % do PIB</h2>
+    <p class="cap">De onde partimos e aonde o plano quer chegar</p>
+    <div class="track" aria-hidden="true">
+      <div class="rail"></div><div class="past"></div><div class="now"></div><div class="goal"></div>
+      <div class="tick" style="left:calc(52% - 1px)"></div><div class="tick" style="left:calc(62% - 1px)"></div>
+    </div>
+    <div class="scale" aria-hidden="true"><span>0%</span><span>5%</span><span>10%</span><span>15%</span><span>20%</span><span>25%</span></div>
+    <ul class="legend">
+      <li><span class="sw" style="background:var(--brand)"></span><span><b>11%</b><br>hoje</span></li>
+      <li><span class="sw" style="background:var(--ink)"></span><span><b>13 · 15,5%</b><br>revisões 2030 e 2035</span></li>
+      <li><span class="sw" style="background:var(--accent)"></span><span><b>18%</b><br>meta 2040</span></li>
+      <li><span class="sw" style="background:var(--muted);opacity:.5"></span><span><b>20–25%</b><br>anos 1980</span></li>
+    </ul>
+  </div>
 <article class="prose"><section class="resumo"><h2 id="industria-resumo-em-2-minutos">Resumo em 2 minutos</h2><p><strong>Em uma frase.</strong> Fazer a indústria voltar a crescer no Brasil, dobrando o peso dela na economia até 2040, com apoio público que só continua se der resultado.</p>
 <p><strong>O número.</strong> Indústria de transformação (as fábricas que transformam matéria-prima em produto) de cerca de 11% para 18% do PIB em 2040, com 3 milhões de novos empregos industriais com carteira assinada.</p>
 <p><strong>Para quem.</strong> Para quem trabalha ou quer trabalhar em emprego formal com salário melhor; para empresas que investem e exportam; para regiões fora do eixo Sul-Sudeste, que recebem novos polos industriais.</p>
@@ -1463,7 +1534,7 @@ footer b{color:var(--ink)}
 <section class="view page" id="v-palavras" data-view="palavras" hidden>
 <header class="page-head"><p class="eyebrow">Glossário</p><h1>Palavras do plano</h1></header>
 <details class="toc"><summary>Nesta página <span>5 seções</span></summary><ol><li><a href="#palavras" data-target="palavras-economia-e-industria">Economia e indústria</a></li><li><a href="#palavras" data-target="palavras-saude">Saúde</a></li><li><a href="#palavras" data-target="palavras-educacao-e-ciencia">Educação e ciência</a></li><li><a href="#palavras" data-target="palavras-populacao">População</a></li><li><a href="#palavras" data-target="palavras-governo-e-controle">Governo e controle</a></li></ol></details>
-<div class="gloss-search"><input type="search" id="gloss-q" placeholder="Procure um termo, por exemplo PIB ou SUS" aria-label="Procurar termo"></div><article class="prose"><p class="lede">O Brasil que Faz foi escrito para ser entendido por qualquer pessoa, mas alguns termos técnicos e siglas são inevitáveis. Esta página explica cada um em uma ou duas frases, no sentido em que o plano os usa. Os termos estão em ordem alfabética dentro de cada grupo.</p>
+<article class="prose"><p class="lede">O Brasil que Faz foi escrito para ser entendido por qualquer pessoa, mas alguns termos técnicos e siglas são inevitáveis. Esta página explica cada um em uma ou duas frases, no sentido em que o plano os usa. Os termos estão em ordem alfabética dentro de cada grupo.</p>
 <h2 id="palavras-economia-e-industria">Economia e indústria</h2>
 <div class="table-wrap"><table class="cards two">
 <thead>
@@ -1630,8 +1701,9 @@ footer b{color:var(--ink)}
     var t=document.querySelector('#v-'+name+' h1');
     document.title=name==='inicio'?'Brasil que Faz':(t?t.textContent+' · Brasil que Faz':'Brasil que Faz');
     sheet.hidden=true;
-    window.scrollTo(0,0);
+    if(pend){pend.scrollIntoView({block:'start',behavior:'instant'});pend=null}else window.scrollTo(0,0);
   }
+  var pend=null;
   window.addEventListener('hashchange',show);
   show();
   document.getElementById('menu-btn').addEventListener('click',function(){sheet.hidden=false;var a=sheet.querySelector('[aria-current]')||sheet.querySelector('a');a&&a.focus()});
@@ -1643,7 +1715,10 @@ footer b{color:var(--ink)}
     if(!a)return;
     e.preventDefault();
     var el=document.getElementById(a.dataset.target);
-    if(el){el.scrollIntoView({block:'start'});var d=a.closest('details');if(d)d.open=false}
+    if(!el)return;
+    var v=el.closest('.view');
+    if(v&&v.hidden){pend=el;location.hash=a.getAttribute('href');return}
+    el.scrollIntoView({block:'start'});var d=a.closest('details');if(d)d.open=false
   });
   var q=document.getElementById('gloss-q');
   if(q)q.addEventListener('input',function(){
