@@ -258,6 +258,91 @@ footer b{color:var(--ink)}
 .starts b{display:block;font-family:var(--display);font-stretch:110%;font-weight:800;font-size:17px;color:var(--brand)}
 .starts span{font-family:var(--ui);font-size:13px;color:var(--muted)}
 .page>.meter{margin-inline:0}
+.prose .painel{list-style:none;margin:12px 0 24px;padding:0;border-top:1px solid var(--line)}
+.prose .painel li{margin:0}
+.painel a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;padding:11px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.painel b{font-family:var(--ui);font-size:15.5px}
+.painel .nums{font-family:var(--display);font-weight:800;color:var(--brand);font-size:15px;text-align:right;white-space:nowrap}
+.painel .nums i{font-style:normal;color:var(--muted);font-weight:400}
+.painel small{grid-column:1/-1;font-family:var(--ui);font-size:12.5px;color:var(--muted)}
+.tema{background:var(--surface);border:1px solid var(--line);border-radius:16px;margin:0 0 16px;overflow:hidden;scroll-margin-top:72px}
+.tema h3{margin:0;padding:14px 16px 10px;font-size:19px}
+.tema .parte{padding:10px 16px 12px;border-top:1px solid var(--line)}
+.tema h4{margin:0 0 4px;font-family:var(--ui);font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.tema .parte p{margin:0;font-size:15.5px;line-height:1.5}
+.tema .plano{background:var(--brand-soft)}
+.tema .plano h4{color:var(--brand)}
+.tema .pcode{font-family:var(--ui);font-weight:700;font-size:13.5px;white-space:nowrap;text-decoration:none}
+.tema .ind{font-family:var(--ui);font-weight:600;font-size:14.5px!important;margin-bottom:8px!important}
+.prose .tema .metas{list-style:none;margin:0 0 10px;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.tema .metas li{margin:0;background:var(--bg);border-radius:8px;padding:6px 8px;text-align:center}
+.tema .metas li:first-child{background:var(--accent-soft)}
+.tema .metas span{display:block;font-family:var(--ui);font-size:11px;color:var(--muted)}
+.tema .metas b{font-family:var(--display);font-weight:800;font-size:15px;color:var(--brand)}
+.tema dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 10px;font-size:14.5px}
+.tema dt{font-family:var(--ui);font-weight:600;color:var(--muted);font-size:13px}
+.tema dd{margin:0}
+.tbd{display:inline-block;font-family:var(--ui);font-size:12.5px;font-weight:600;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:1px 8px}
+.donos{display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--ui);font-size:13px;color:var(--muted);margin:4px 0 18px}
+.donos span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;background:var(--c)}
+.d-m{--c:var(--brand)}.d-e{--c:var(--accent)}.d-u{--c:#5B6FD6}.d-x{--c:var(--line)}
+.prose .trilha{list-style:none;margin:0 0 8px;padding:0 0 0 26px;position:relative}
+.trilha>li::after{content:"";position:absolute;left:-19px;top:30px;bottom:-16px;width:2px;background:var(--c)}
+.trilha>li:last-child::after{display:none}
+.prose .trilha>li{position:relative;margin:0;padding:0 0 6px}
+.trilha>li::before{content:"";position:absolute;z-index:1;left:-26px;top:16px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:4px solid var(--c);box-sizing:border-box}
+.trilha summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0 12px;padding:10px 0 12px;border-bottom:1px solid var(--line)}
+.trilha summary::-webkit-details-marker{display:none}
+.trilha .age{grid-column:1/-1;font-family:var(--ui);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.trilha .tt{font-family:var(--ui);font-weight:700;font-size:17px;line-height:1.3;align-self:baseline}
+.trilha .big{font-family:var(--display);font-stretch:110%;font-weight:800;font-size:17px;color:var(--brand);white-space:nowrap;align-self:baseline}
+.trilha .big em{font-style:normal;color:var(--muted);font-weight:400}
+.trilha .who{grid-column:1/-1;font-family:var(--ui);font-size:12.5px;color:var(--muted);margin-top:2px}
+.trilha details[open] summary{border-bottom-color:transparent}
+.trilha .more{padding:0 0 14px;border-bottom:1px solid var(--line)}
+.trilha .more p{font-size:15.5px;margin:0 0 10px}
+.prog{position:relative;height:8px;border-radius:4px;background:var(--line);margin:14px 0 6px}
+.prog .now{position:absolute;left:0;top:0;bottom:0;border-radius:4px 0 0 4px;background:var(--brand)}
+.prog .goal{position:absolute;top:0;bottom:0;background:var(--accent);opacity:.55}
+.prog i{position:absolute;top:-3px;width:2px;height:14px;background:var(--ink)}
+.trilha .more p.steps{display:flex;justify-content:space-between;font-family:var(--ui);font-size:12px;color:var(--muted);margin:0 0 12px}
+.steps b{display:block;font-family:var(--display);font-size:14px;color:var(--ink)}
+.trilha .more p.meta-who{font-size:14.5px}
+.trilha .more p.bar-t{font-family:var(--ui);font-weight:600;font-size:13.5px;margin:12px 0 0}
+.prog.down .now{background:var(--accent);border-radius:4px}
+.base-t{margin:22px 0 6px;font-size:17px}
+.prose .base{list-style:none;padding:0;margin:0 0 20px}
+.prose .base li{margin:0;padding:10px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.base .who{display:block;font-family:var(--ui);font-size:12.5px;color:var(--muted);margin-top:2px}
+.base a{font-family:var(--ui);font-weight:700;font-size:13.5px;text-decoration:none}
+.voz-hero{margin:22px 0 0;width:100%;display:flex;align-items:center;gap:14px;text-align:left;border:0;border-radius:16px;padding:16px 18px;background:var(--accent);color:#1d1606;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+.voz-hero b{display:block;font-family:var(--display);font-stretch:110%;font-weight:800;font-size:21px;line-height:1.15}
+.voz-hero small{display:block;font-family:var(--ui);font-size:13.5px;margin-top:2px}
+.voz-hero svg{flex:none;width:44px;height:44px;padding:9px;box-sizing:border-box;border-radius:50%;background:rgba(255,255,255,.45)}
+.voz-fab{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:25;display:flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:12px 16px;background:var(--accent);color:#1d1606;font-family:var(--ui);font-weight:700;font-size:14.5px;box-shadow:0 6px 18px rgba(0,0,0,.18);cursor:pointer}
+.voz{position:fixed;inset:0;z-index:45;background:color-mix(in srgb,var(--ink) 45%,transparent);display:flex;align-items:flex-end}
+.voz-in{width:100%;box-sizing:border-box;background:var(--surface);border-radius:20px 20px 0 0;padding:20px var(--gutter-r) calc(20px + env(safe-area-inset-bottom,0px)) var(--gutter);max-height:90vh;overflow:auto}
+.voz h2{font-family:var(--display);font-size:20px;margin:0 0 4px}
+.voz-sub,.voz-note{font-family:var(--ui);font-size:13.5px;color:var(--muted);margin:0 0 16px;line-height:1.45}
+.voz-note{font-size:12.5px;margin:10px 0 14px}
+.voz-rec{display:flex;align-items:center;gap:16px;margin:0 0 14px}
+.voz-btn{width:64px;height:64px;border-radius:50%;border:3px solid var(--accent);background:var(--bg);display:grid;place-items:center;cursor:pointer;flex:none}
+.voz-btn .dot{width:26px;height:26px;border-radius:50%;background:#C8382B;transition:all .15s}
+.voz-btn.on .dot{border-radius:5px;width:22px;height:22px}
+.voz-btn.on{animation:vozp 1.4s infinite}
+@keyframes vozp{50%{box-shadow:0 0 0 8px color-mix(in srgb,#C8382B 25%,transparent)}}
+.voz-time{font-family:var(--display);font-weight:800;font-size:26px;margin:0;font-variant-numeric:tabular-nums}
+.voz-state{font-family:var(--ui);font-size:13px;color:var(--muted);margin:0}
+.voz audio{width:100%;margin:0 0 12px}
+.voz-lab{display:block;font-family:var(--ui);font-size:13px;font-weight:600;margin:0 0 4px}
+.voz input{width:100%;box-sizing:border-box;font:16px var(--ui);padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.voz-actions{display:flex;gap:10px}
+.voz-actions button{flex:1;min-height:46px;border-radius:12px;font-family:var(--ui);font-weight:700;font-size:15px;cursor:pointer}
+.voz-cancel{background:transparent;border:1.5px solid var(--line);color:var(--ink)}
+.voz-send{background:var(--brand);border:0;color:var(--brand-ink)}
+.voz-send:disabled{opacity:.45;cursor:default}
+.voz-msg{font-family:var(--ui);font-size:14px;margin:10px 0 0;min-height:1em}
+footer{padding-bottom:84px}
 </style>
 
 </head>
@@ -277,6 +362,7 @@ footer b{color:var(--ink)}
       <li><a href="#nib">Nova Indústria Brasil</a></li>
       <li><a href="#educacao">Educação</a></li>
       <li><a href="#saude">Saúde</a></li>
+      <li><a href="#gatilhos">Gatilhos entre as áreas</a></li>
       <li><a href="#palavras">Palavras do plano</a></li>
     </ul>
     <button class="close" id="sheet-close" type="button">Fechar</button>
@@ -289,6 +375,7 @@ footer b{color:var(--ink)}
     <p class="eyebrow">Programa de país · 2027 a 2040</p>
     <h1>Brasil<br>que <span>Faz</span></h1>
     <p class="sub">Um plano de país para 2027 a 2040, a primeira etapa de uma visão até 2070. Começa por quem é o brasileiro e segue área por área, com metas que dá para medir e cobrar.</p>
+    <button type="button" class="voz-hero" data-voz><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11h-2Z"/></svg><span><b>Comente por áudio</b><small>Diga o que achou do plano. Leva um minuto.</small></span></button>
   </div>
 
   <h2 class="section-title">Quem somos e quem seremos</h2>
@@ -339,7 +426,7 @@ footer b{color:var(--ink)}
   </ol>
 
   <h2 class="section-title">As áreas</h2>
-  <p>O plano cobre 14 áreas de governo, e a indústria é o eixo que as conecta. Cada área tem uma página com o mesmo roteiro: diagnóstico, medidas, metas, conexões com as outras áreas e riscos.</p>
+  <p>O plano cobre 15 áreas de governo, e a indústria é o eixo que as conecta. Cada área tem uma página com o mesmo roteiro: diagnóstico, medidas, metas, conexões com as outras áreas e riscos.</p>
   <ul class="areas">
 <li class="area ready"><a href="#brasileiro"><span class="n">↳</span><span class="t"><b>Quem é o brasileiro</b><span>Hoje, 2040 e 2070: a população que define cada meta</span></span><span class="st">Ler</span></a></li>
 <li class="area ready"><a href="#industria"><span class="n">00</span><span class="t"><b>Plano industrial 2027–2040</b><span>Define setores, metas e cronograma que as outras áreas apoiam</span></span><span class="st">Ler</span></a></li>
@@ -352,11 +439,12 @@ footer b{color:var(--ink)}
 <li class="area"><div><span class="n">06</span><span class="t"><b>Energia e meio ambiente</b><span>Energia limpa e barata como vantagem competitiva</span></span><span class="st">Em breve</span></div></li>
 <li class="area"><div><span class="n">07</span><span class="t"><b>Segurança pública</b><span>Reduz o custo do crime para empresas e cargas e protege investimentos</span></span><span class="st">Em breve</span></div></li>
 <li class="area"><div><span class="n">08</span><span class="t"><b>Infraestrutura e cidades</b><span>Logística, moradia e transporte perto dos polos industriais</span></span><span class="st">Em breve</span></div></li>
-<li class="area"><div><span class="n">09</span><span class="t"><b>Trabalho e proteção social</b><span>Empregos de qualidade e apoio a quem muda de setor</span></span><span class="st">Em breve</span></div></li>
-<li class="area"><div><span class="n">10</span><span class="t"><b>Desenvolvimento regional</b><span>Distribui os polos industriais pelo país</span></span><span class="st">Em breve</span></div></li>
-<li class="area"><div><span class="n">11</span><span class="t"><b>Agricultura e bioeconomia</b><span>Matéria-prima e demanda para a agroindústria e as máquinas</span></span><span class="st">Em breve</span></div></li>
-<li class="area"><div><span class="n">12</span><span class="t"><b>Política externa, comércio e defesa</b><span>Mercados, acordos, tecnologia e base industrial de defesa</span></span><span class="st">Em breve</span></div></li>
-<li class="area"><div><span class="n">13</span><span class="t"><b>Gestão pública e instituições</b><span>Um Estado capaz de executar, medir e corrigir o plano</span></span><span class="st">Em breve</span></div></li>
+<li class="area"><div><span class="n">09</span><span class="t"><b>Trabalho</b><span>Empregos de qualidade e apoio a quem muda de setor</span></span><span class="st">Em breve</span></div></li>
+<li class="area"><div><span class="n">10</span><span class="t"><b>Proteção social</b><span>Protege a renda das famílias pobres e liga o benefício à escola, à saúde e ao emprego</span></span><span class="st">Em breve</span></div></li>
+<li class="area"><div><span class="n">11</span><span class="t"><b>Desenvolvimento regional</b><span>Distribui os polos industriais pelo país</span></span><span class="st">Em breve</span></div></li>
+<li class="area"><div><span class="n">12</span><span class="t"><b>Agricultura e bioeconomia</b><span>Matéria-prima e demanda para a agroindústria e as máquinas</span></span><span class="st">Em breve</span></div></li>
+<li class="area"><div><span class="n">13</span><span class="t"><b>Política externa, comércio e defesa</b><span>Mercados, acordos, tecnologia e base industrial de defesa</span></span><span class="st">Em breve</span></div></li>
+<li class="area"><div><span class="n">14</span><span class="t"><b>Gestão pública e instituições</b><span>Um Estado capaz de executar, medir e corrigir o plano</span></span><span class="st">Em breve</span></div></li>
   </ul>
 
   <h2 class="section-title">Por onde começar</h2>
@@ -366,6 +454,7 @@ footer b{color:var(--ink)}
     <li><a href="#educacao" data-target="educacao-propostas"><b>EDU-01 a 09</b><span>Propostas da educação</span></a></li>
     <li><a href="#saude" data-target="saude-propostas"><b>SAU-01 a 09</b><span>Propostas da saúde</span></a></li>
     <li><a href="#palavras"><b>Glossário</b><span>Siglas e termos do plano</span></a></li>
+    <li><a href="#gatilhos"><b>Gatilhos</b><span>Como uma área puxa as outras</span></a></li>
   </ul>
 </section>
 
@@ -631,7 +720,7 @@ footer b{color:var(--ink)}
 <li>Reforma tributária do consumo (IVA dual) aprovada em 2023, em implantação até 2033.</li>
 </ul>
 <blockquote>
-<p><strong>O que a demografia muda aqui.</strong> A população em idade de trabalhar chega ao pico em 2035 e a partir de 2041 perde cerca de 1 milhão de pessoas por ano. Os 3 milhões de empregos industriais vêm de quem já existe (informais, mulheres fora do mercado, serviços de baixa produtividade), e a automação é política de oferta de trabalho, não só de competitividade. Os números estão em <a href="#brasileiro">Quem é o brasileiro: hoje, 2040 e 2070</a>.</p>
+<p><strong>O que a demografia muda aqui.</strong> A população em idade de trabalhar chega ao pico em 2035 e a partir de 2041 perde cerca de 1 milhão de pessoas por ano. Os 3 milhões de empregos industriais vêm de quem já existe (informais, mulheres fora do mercado, serviços de baixa produtividade), e a automação é política de oferta de trabalho, não só de competitividade. Os números estão na página Quem é o brasileiro, em Quem é o brasileiro: hoje, 2040 e 2070.</p>
 </blockquote>
 <p><strong>A janela demográfica fecha em 2035</strong></p>
 <p>O período 2027–2040 é a última janela para industrializar com população ativa ainda crescendo. Pelas projeções do IBGE (Revisão 2024), a população de 15 a 64 anos chega ao pico em 2035 (149,6 milhões) e cresce só 0,4% entre 2026 e 2040; a população total atinge o máximo em 2041 e os óbitos passam os nascimentos em 2042. O bônus demográfico acabou em 2017: a demografia, que somava cerca de 0,4 ponto percentual por ano à renda per capita entre 2000 e 2018, passa a tirar cerca de 0,2 ponto por ano até 2040. Três consequências para o plano: a produtividade vira a condição de todas as outras metas; os 3 milhões de empregos industriais virão da formalização (38% dos ocupados são informais), de inativos e de serviços de baixa produtividade, não de jovens novos; e os polos industriais devem priorizar regiões onde a população ativa ainda cresce (Norte, Mato Grosso, Goiás, Santa Catarina), porque Rio Grande do Sul, Rio de Janeiro e Minas já passaram do pico. Todas as metas por habitante, trabalhador ou aluno usam a mesma base do IBGE e serão atualizadas nas revisões de 2030 e 2035.</p>
@@ -1013,14 +1102,14 @@ footer b{color:var(--ink)}
 </section>
 <section class="view page" id="v-educacao" data-view="educacao" hidden>
 <header class="page-head"><p class="eyebrow">Área 1</p><h1>Educação</h1></header>
-<details class="toc"><summary>Nesta página <span>13 seções</span></summary><ol><li><a href="#educacao" data-target="educacao-resumo-em-2-minutos">Resumo em 2 minutos</a></li><li><a href="#educacao" data-target="educacao-de-onde-partimos-o-que-ja-existe">De onde partimos: o que já existe</a></li><li><a href="#educacao" data-target="educacao-diagnostico">Diagnóstico</a></li><li><a href="#educacao" data-target="educacao-medidas-por-etapa">Medidas por etapa</a></li><li><a href="#educacao" data-target="educacao-o-modelo-do-ceara-como-funciona-e-por-qu">O modelo do Ceará: como funciona e por que é a referência</a></li><li><a href="#educacao" data-target="educacao-ensino-tecnico-e-engenharia-o-nucleo-da-">Ensino técnico e engenharia: o núcleo da política</a></li><li><a href="#educacao" data-target="educacao-inteligencia-artificial-na-educacao">Inteligência artificial na educação</a></li><li><a href="#educacao" data-target="educacao-instituto-de-ia-aplicada-e-a-licao-do-ce">Instituto de IA aplicada e a lição do CERN</a></li><li><a href="#educacao" data-target="educacao-professores-financiamento-e-governanca">Professores, financiamento e governança</a></li><li><a href="#educacao" data-target="educacao-metas-2030-2035-e-2040">Metas 2030, 2035 e 2040</a></li><li><a href="#educacao" data-target="educacao-conexoes-com-as-outras-areas-e-riscos">Conexões com as outras áreas e riscos</a></li><li><a href="#educacao" data-target="educacao-fontes">Fontes</a></li><li><a href="#educacao" data-target="educacao-propostas">Propostas</a></li></ol></details>
+<details class="toc"><summary>Nesta página <span>16 seções</span></summary><ol><li><a href="#educacao" data-target="educacao-resumo-em-2-minutos">Resumo em 2 minutos</a></li><li><a href="#educacao" data-target="educacao-de-onde-partimos-o-que-ja-existe">De onde partimos: o que já existe</a></li><li><a href="#educacao" data-target="educacao-como-a-educacao-funciona-e-quem-responde">Como a educação funciona e quem responde por quê</a></li><li><a href="#educacao" data-target="educacao-os-indicadores-o-que-vamos-acompanhar-qu">Os indicadores: o que vamos acompanhar, quem mede e quem responde</a></li><li><a href="#educacao" data-target="educacao-diagnostico">Diagnóstico</a></li><li><a href="#educacao" data-target="educacao-medidas-por-etapa">Medidas por etapa</a></li><li><a href="#educacao" data-target="educacao-o-modelo-do-ceara-como-funciona-e-por-qu">O modelo do Ceará: como funciona e por que é a referência</a></li><li><a href="#educacao" data-target="educacao-ensino-tecnico-e-engenharia-o-nucleo-da-">Ensino técnico e engenharia: o núcleo da política</a></li><li><a href="#educacao" data-target="educacao-ensino-superior-as-profissoes-que-o-pais">Ensino superior: as profissões que o país vai precisar</a></li><li><a href="#educacao" data-target="educacao-inteligencia-artificial-na-educacao">Inteligência artificial na educação</a></li><li><a href="#educacao" data-target="educacao-instituto-de-ia-aplicada-e-a-licao-do-ce">Instituto de IA aplicada e a lição do CERN</a></li><li><a href="#educacao" data-target="educacao-professores-financiamento-e-governanca">Professores, financiamento e governança</a></li><li><a href="#educacao" data-target="educacao-metas-2030-2035-e-2040">Metas 2030, 2035 e 2040</a></li><li><a href="#educacao" data-target="educacao-conexoes-com-as-outras-areas-e-riscos">Conexões com as outras áreas e riscos</a></li><li><a href="#educacao" data-target="educacao-fontes">Fontes</a></li><li><a href="#educacao" data-target="educacao-propostas">Propostas</a></li></ol></details>
 <article class="prose"><section class="resumo"><h2 id="educacao-resumo-em-2-minutos">Resumo em 2 minutos</h2><p><strong>Em uma frase.</strong> Garantir que toda criança aprenda a ler e a fazer contas na idade certa e que metade dos jovens do ensino médio saia com uma profissão, porque sem isso as fábricas não chegam.</p>
 <p><strong>Os números.</strong> Crianças alfabetizadas ao fim do 2º ano: de 66% hoje para 95% em 2040. Alunos do ensino médio em curso técnico: de 21,5% para 50%. Engenheiros formados por ano: de 96 mil para 140 mil.</p>
-<p><strong>Para quem.</strong> Para 26 milhões de alunos do ensino fundamental e 8,7 milhões do ensino médio; para 2 milhões de trabalhadores adultos que vão se requalificar; para professores de matemática, física e química, que ganham carreira melhor.</p>
+<p><strong>Para quem.</strong> Para 25,8 milhões de alunos do ensino fundamental e 7,3 milhões do ensino médio (Censo Escolar 2025); para 2 milhões de trabalhadores adultos que vão se requalificar; para professores de matemática, física e química, que ganham carreira melhor.</p>
 <p><strong>O que já existe.</strong> O Brasil já tem o programa nacional de alfabetização inspirado no Ceará (subiu de 56% para 66% em dois anos), o novo Plano Nacional de Educação com meta de 50% de ensino técnico, o Pé-de-Meia, o programa Juros por Educação e a rede de institutos federais e Senai. O plano mantém tudo isso e acrescenta cobrança anual e dinheiro ligado a resultado.</p>
 <p><strong>Como funciona.</strong> O modelo do Ceará (meta única, prova anual de cada criança, material e formação para o professor, estado ajudando os municípios e repasse de ICMS por resultado) vale para o país inteiro e se estende à matemática. O ensino técnico cresce nas redes estaduais e no Senai, com parte da semana na escola e parte na empresa. A inteligência artificial entra só depois de formar os professores, com testes antes de comprar plataformas.</p>
 <p><strong>Quem paga.</strong> O gasto público em educação fica perto do nível atual como parte da economia: como haverá menos alunos, o dinheiro por aluno sobe, e o crescimento vai para alfabetização, ensino técnico e engenharia. Empresas que recebem incentivos industriais abrem vagas de aprendiz.</p>
-<p><strong>O que você vai encontrar nesta página.</strong> O que já existe, o diagnóstico, as medidas por etapa, o modelo do Ceará em detalhe, ensino técnico e engenharia, inteligência artificial, professores, metas por ano, riscos e, no fim, as propostas em fichas (EDU-01 a EDU-09).</p>
+<p><strong>O que você vai encontrar nesta página.</strong> O que já existe, o diagnóstico, as medidas por etapa, o modelo do Ceará em detalhe, ensino técnico e engenharia, ensino superior e as profissões que o país vai precisar, inteligência artificial, professores, metas por ano, riscos e, no fim, as propostas em fichas (EDU-01 a EDU-11).</p>
 </section>
 <p>A educação é o primeiro gargalo do plano: as fábricas das missões só chegam se houver técnicos, engenheiros e pesquisadores, e eles levam de 4 a 10 anos para ser formados. Por isso a política educacional começa antes dos investimentos industriais, não depois.</p>
 <h2 id="educacao-de-onde-partimos-o-que-ja-existe">De onde partimos: o que já existe</h2>
@@ -1050,6 +1139,62 @@ footer b{color:var(--ink)}
 </tbody>
 </table></div>
 <p><a href="https://claude.ai/artifact/8X8srs3s2yngWvoZvUCbPR" target="_blank" rel="noopener">As fontes de cada linha estão na seção Fontes, no fim desta página</a>.</p>
+<h2 id="educacao-como-a-educacao-funciona-e-quem-responde">Como a educação funciona e quem responde por quê</h2>
+<p>A educação brasileira tem três donos e um financiador comum. Os municípios mantêm as creches e as escolas do fundamental, os estados mantêm o ensino médio, e a União mantém os institutos e as universidades federais. Mas o papel maior da União é outro: ela paga, mede e regula as escolas de todo mundo. Entre a creche e o fim do médio, um aluno pode passar por três donos diferentes, e a troca mais comum acontece na passagem do 5º para o 6º ano, justamente onde a aprendizagem mais cai.</p>
+<div class="table-wrap"><table class="cards">
+<thead>
+<tr>
+<th>Etapa</th>
+<th>Quem mantém a escola</th>
+<th>Quem paga</th>
+<th>Quem mede</th>
+<th>Quem cobra resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="Etapa">Creche e pré-escola (0 a 5 anos)</td><td data-label="Quem mantém a escola">Município</td><td data-label="Quem paga">Município, com o Fundeb</td><td data-label="Quem mede">Inep, pelo Censo Escolar</td><td data-label="Quem cobra resultado">Prefeito, conselho municipal, Ministério Público (vaga)</td></tr>
+<tr><td data-label="Etapa">Fundamental, anos iniciais (6 a 10 anos)</td><td data-label="Quem mantém a escola">Município, na maioria dos casos</td><td data-label="Quem paga">Município, com o Fundeb</td><td data-label="Quem mede">Inep: Saeb no 2º e 5º anos, Indicador Criança Alfabetizada (aplicado pelos estados) e Ideb</td><td data-label="Quem cobra resultado">Prefeito, tribunal de contas, conselho do Fundeb</td></tr>
+<tr><td data-label="Etapa">Fundamental, anos finais (11 a 14 anos)</td><td data-label="Quem mantém a escola">Município ou estado, conforme a região</td><td data-label="Quem paga">Fundeb</td><td data-label="Quem mede">Inep: Saeb no 9º ano e Ideb</td><td data-label="Quem cobra resultado">Prefeito ou governador</td></tr>
+<tr><td data-label="Etapa">Ensino médio (15 a 17 anos)</td><td data-label="Quem mantém a escola">Estado</td><td data-label="Quem paga">Estado, com o Fundeb</td><td data-label="Quem mede">Inep: Saeb no 3º ano, Ideb e Enem</td><td data-label="Quem cobra resultado">Governador, tribunal de contas do estado</td></tr>
+<tr><td data-label="Etapa">Ensino técnico</td><td data-label="Quem mantém a escola">Redes estaduais (82% da oferta pública), Rede Federal, Senai e escolas privadas</td><td data-label="Quem paga">Estado, União (Rede Federal e Juros por Educação) e empresas (contribuição ao Sistema S)</td><td data-label="Quem mede">Inep, pelo Censo Escolar</td><td data-label="Quem cobra resultado">Governador, MEC, TCU (no caso do Sistema S)</td></tr>
+<tr><td data-label="Etapa">Graduação e pós</td><td data-label="Quem mantém a escola">União (69 universidades federais), estados e instituições privadas, que concentram a maior parte das matrículas</td><td data-label="Quem paga">União (federais, Prouni e Fies), estados e mensalidades</td><td data-label="Quem mede">Inep (Enade) e Capes (pós-graduação)</td><td data-label="Quem cobra resultado">MEC, que credencia e fecha cursos</td></tr>
+</tbody>
+</table></div>
+<p><strong>O que a União faz em cada escola do país, mesmo sem ser dona dela.</strong></p>
+<ul>
+<li><strong>Paga</strong> pelo FNDE: complementação do Fundeb (R$ 69,2 bilhões em 2026, 23% do fundo), merenda, livro didático, transporte e dinheiro direto na escola.</li>
+<li><strong>Mede</strong> pelo Inep: Censo Escolar todo ano, Saeb e Ideb a cada dois anos, Enem, Enade e Prova Nacional Docente.</li>
+<li><strong>Regula</strong> pelo Conselho Nacional de Educação: currículo comum (BNCC), diretrizes e regras de IA na escola.</li>
+<li><strong>Forma</strong> professores e pesquisadores pela Capes.</li>
+</ul>
+<p><strong>A cadeia de comando não passa pelo MEC.</strong> O diretor de uma escola municipal responde ao secretário municipal, que responde ao prefeito. A União só chega a essa escola pelo dinheiro, pelas normas e pelas provas. Além do eleitor, três instâncias cobram resultado: os tribunais de contas (o dinheiro foi bem gasto?), o Ministério Público (a criança tem vaga, merenda e transporte?) e os conselhos com participação da sociedade, como o do Fundeb e o de alimentação escolar. Desde 2025, o Sistema Nacional de Educação (Lei Complementar 220/2025) cria instâncias para União, estados e municípios combinarem metas juntos.</p>
+<p><strong>O que isso muda no plano.</strong> Cada meta tem um dono claro. A alfabetização é dos municípios, com o estado ajudando, como no Ceará. O ensino médio e o técnico são dos estados. A engenharia depende das universidades federais e das privadas. A formação de professores é tarefa de todos, mas quem paga a maior parte é a União. O plano não cria estrutura nova: usa o dinheiro federal (Fundeb por resultado), as provas do Inep e as instâncias do Sistema Nacional de Educação para cobrar cada dono.</p>
+<h2 id="educacao-os-indicadores-o-que-vamos-acompanhar-qu">Os indicadores: o que vamos acompanhar, quem mede e quem responde</h2>
+<p>Todo indicador do plano vem de uma fonte oficial que já existe. O <a href="https://claude.ai/artifact/QwwZrNMPDmystmrDfKjrYD" target="_blank" rel="noopener">Painel da Educação</a> mostra esses números com a meta e a comparação internacional.</p>
+<div class="table-wrap"><table class="cards">
+<thead>
+<tr>
+<th>Indicador</th>
+<th>Hoje</th>
+<th>Lá fora</th>
+<th>Quem mede e quando</th>
+<th>Quem responde</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="Indicador">Crianças alfabetizadas ao fim do 2º ano</td><td data-label="Hoje">66% (2025)</td><td data-label="Lá fora">Sem prova internacional nessa idade</td><td data-label="Quem mede e quando">Inep com os estados, todo ano</td><td data-label="Quem responde">Municípios, com apoio do estado</td></tr>
+<tr><td data-label="Indicador">Alunos de 15 anos no nível básico de matemática (PISA)</td><td data-label="Hoje">28% (2025)</td><td data-label="Lá fora">México 30%, média da OCDE 65%, Estônia 83%, Singapura 89%</td><td data-label="Quem mede e quando">OCDE, a cada 3 ou 4 anos (próximo em 2029)</td><td data-label="Quem responde">Estados e municípios (anos finais e médio)</td></tr>
+<tr><td data-label="Indicador">Nota média em matemática no PISA</td><td data-label="Hoje">377 (2025)</td><td data-label="Lá fora">Chile 403, Portugal 460, OCDE 463, Polônia 484, Estônia 508, Singapura 563</td><td data-label="Quem mede e quando">OCDE, a cada 3 ou 4 anos</td><td data-label="Quem responde">Estados e municípios</td></tr>
+<tr><td data-label="Indicador">Concluintes do médio com matemática adequada (Saeb)</td><td data-label="Hoje">5,2% (2023)</td><td data-label="Lá fora">Só brasileiro</td><td data-label="Quem mede e quando">Inep, a cada dois anos</td><td data-label="Quem responde">Estados</td></tr>
+<tr><td data-label="Indicador">Ideb do ensino médio</td><td data-label="Hoje">4,5 (2025), meta antiga de 5,2</td><td data-label="Lá fora">Só brasileiro</td><td data-label="Quem mede e quando">Inep, a cada dois anos</td><td data-label="Quem responde">Estados</td></tr>
+<tr><td data-label="Indicador">Alunos do ensino médio em curso técnico</td><td data-label="Hoje">21,5% (2025)</td><td data-label="Lá fora">Portugal 37,5%, OCDE 44%, União Europeia 49,4%, Polônia 51,8%, Finlândia 67,8%</td><td data-label="Quem mede e quando">Inep, Censo Escolar, todo ano</td><td data-label="Quem responde">Estados, Rede Federal e Senai</td></tr>
+<tr><td data-label="Indicador">Rede pública em tempo integral</td><td data-label="Hoje">25,8% (2025)</td><td data-label="Lá fora">Sem indicador igual; a OCDE compara horas de aula por ano</td><td data-label="Quem mede e quando">Inep, Censo Escolar, todo ano</td><td data-label="Quem responde">Estados e municípios, com apoio federal</td></tr>
+<tr><td data-label="Indicador">Gasto público por aluno (US$ ajustados ao custo de vida)</td><td data-label="Hoje">4.133 (2023)</td><td data-label="Lá fora">Colômbia 3.398, Chile 5.794, Portugal 11.605, OCDE 13.601, Coreia 14.521</td><td data-label="Quem mede e quando">OCDE, todo ano, com três anos de atraso; Siope (FNDE), todo ano</td><td data-label="Quem responde">União, estados e municípios</td></tr>
+<tr><td data-label="Indicador">Engenheiros formados por ano</td><td data-label="Hoje">96 mil (2023)</td><td data-label="Lá fora">Sem comparação neste documento</td><td data-label="Quem mede e quando">Inep, Censo da Educação Superior, todo ano</td><td data-label="Quem responde">União e instituições privadas</td></tr>
+</tbody>
+</table></div>
+<p><strong>Por que esses países.</strong> Chile, México, Colômbia, Costa Rica e Uruguai têm renda e desigualdade parecidas com as nossas, e o Chile é a meta mais próxima. Portugal, Polônia, Estônia e Vietnã deram saltos rápidos. Portugal saiu do fim da fila europeia e chegou à média da OCDE em 15 anos, com tradição escolar parecida com a nossa. A Polônia subiu depois de adiar a separação entre trilha técnica e acadêmica. A Estônia é a primeira da Europa gastando menos que a média. O Vietnã tem renda menor que a do Brasil e tira 66 pontos a mais em matemática. Singapura, Japão e Coreia são o topo, e a Coreia era mais pobre que o Brasil nos anos 1960. Finlândia e Países Baixos mostram como funciona um ensino técnico de massa. A média da OCDE é a régua padrão, mas é a média de países mais ricos: serve como horizonte, não como meta de curto prazo.</p>
+<p><strong>Os números chegam com atraso.</strong> O Censo Escolar sai no ano seguinte à coleta. Saeb e Ideb saem a cada dois anos. O PISA sai a cada três ou quatro anos. O gasto comparado da OCDE chega três anos depois. Por isso, a cobrança anual do plano usa o que é anual (alfabetização, matrículas técnicas, tempo integral, Siope), e os outros indicadores servem para checar o rumo.</p>
 <h2 id="educacao-diagnostico">Diagnóstico</h2>
 <p>O Brasil colocou quase todas as crianças na escola e melhorou o fluxo (conclusão do ensino médio até os 19 anos subiu de 54,5% em 2015 para 74,3% em 2025), mas a competência em matemática está estagnada há dez anos e a engenharia encolhe. Os números abaixo foram verificados em fontes oficiais ou em notas técnicas que as reproduzem; as fontes estão na seção Fontes.</p>
 <div class="table-wrap"><table class="cards">
@@ -1146,7 +1291,7 @@ footer b{color:var(--ink)}
 </ol>
 <p>Fontes principais: <a href="https://documents1.worldbank.org/curated/en/416541593599290439/pdf/From-Bad-to-Best-How-One-State-and-One-Municipality-in-Brazil-are-Eradicating-Illiteracy-and-Innumeracy.pdf" target="_blank" rel="noopener">Banco Mundial, "From Bad to Best" (2020)</a>; <a href="https://documents1.worldbank.org/curated/en/561471606111232725/pdf/Implementing-a-Results-Based-Financing-Mechanism-for-Subnational-Governments-to-Improve-Education-Outcomes-An-Implementation-Guide-Inspired-by-the-Case-of-Ceara-Brazil.pdf" target="_blank" rel="noopener">Banco Mundial, guia de financiamento por resultado inspirado no Ceará (2020)</a>; <a href="https://www.ipece.ce.gov.br/wp-content/uploads/sites/45/2023/05/Apresentacao_Cota_Parte_ICMS_IQe_e_IQS_Mai2023.pdf" target="_blank" rel="noopener">Ipece, cota-parte do ICMS e IQE (2023)</a>; <a href="https://www.ipece.ce.gov.br/wp-content/uploads/sites/45/2016/06/LeiN14023_17_12_2007.pdf" target="_blank" rel="noopener">Lei estadual 14.023/2007</a>; <a href="https://www.scielo.br/j/bpsr/a/s8jwsh34QmjcbN3pJSZTSFK/?lang=en" target="_blank" rel="noopener">estudo de controle sintético, BPSR</a>; <a href="https://todospelaeducacao.org.br/wordpress/wp-content/uploads/2023/10/estudo-tpe-icms-educacao-nos-estadosdocx.pdf" target="_blank" rel="noopener">Todos pela Educação, ICMS educação nos estados (2023)</a>; <a href="https://todospelaeducacao.org.br/wordpress/wp-content/uploads/2026/03/nota-tecnica-indicador-crianca-alfabetizada-2025-todos-pela-educacao.pdf" target="_blank" rel="noopener">Todos pela Educação, indicador Criança Alfabetizada 2025</a>; <a href="https://portal.tcu.gov.br/data/files/FD/F2/E4/06/FD8A791033125279F18818A8/006.753-2024-8-BZ-Auditoria%20ensino%20fundamental.pdf" target="_blank" rel="noopener">TCU, auditoria do ensino fundamental (2024)</a>; <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15247.htm" target="_blank" rel="noopener">Lei 15.247/2025</a>; <a href="https://educacaoquedacerto.todospelaeducacao.org.br/wp-content/uploads/2021/11/educacaoquedacerto-todospelaeducacao-sobral-digital.pdf" target="_blank" rel="noopener">Todos pela Educação, Sobral</a>; <a href="https://www.cgdev.org/node/3134337" target="_blank" rel="noopener">Center for Global Development, leitura cética (2024)</a>.</p>
 <h2 id="educacao-ensino-tecnico-e-engenharia-o-nucleo-da-">Ensino técnico e engenharia: o núcleo da política</h2>
-<p>O ensino técnico é onde a educação encontra a fábrica, e por isso recebe a maior parte do esforço novo. A meta é que 4 em cada 10 alunos do ensino médio façam curso técnico até 2040.</p>
+<p>O ensino técnico é onde a educação encontra a fábrica, e por isso recebe a maior parte do esforço novo. A meta é que metade dos alunos do ensino médio faça curso técnico até 2040.</p>
 <p><strong>Ensino técnico</strong></p>
 <ol>
 <li><strong>Modelo dual</strong>: o aluno passa parte da semana na escola e parte na empresa, com contrato de aprendiz e salário. A Lei do Aprendiz já existe e pode ser ampliada para isso.</li>
@@ -1157,12 +1302,32 @@ footer b{color:var(--ink)}
 </ol>
 <p><strong>Engenharia e tecnologia</strong></p>
 <ul>
-<li>Meta de 100 mil engenheiros formados por ano em áreas industriais, com bolsa de permanência para cortar a evasão.</li>
+<li>Meta de 140 mil engenheiros formados por ano em 2040, em áreas industriais, com bolsa de permanência para cortar a evasão.</li>
 <li>Ciclo básico reforçado no primeiro ano, porque a maior parte da evasão vem de cálculo e física.</li>
 <li>Estágio obrigatório em indústria e projetos reais de empresas como trabalho de conclusão.</li>
 <li>Cursos tecnológicos curtos em automação, semicondutores, energia e dados.</li>
 <li>Programa de retorno de engenheiros e cientistas brasileiros que trabalham no exterior.</li>
 </ul>
+<h2 id="educacao-ensino-superior-as-profissoes-que-o-pais">Ensino superior: as profissões que o país vai precisar</h2>
+<p><strong>Por que a engenharia aparece tanto.</strong> O Brasil que Faz nasceu da industrialização, e a engenharia é o curso em que essa ligação é mais direta e o quadro, mais grave. O número de formados caiu de 129 mil (2018) para 96 mil (2023), justamente quando as missões industriais vão pedir mais. Um engenheiro leva cinco anos ou mais para se formar, então quem vai trabalhar nas fábricas de 2032 precisa começar o curso agora. O país, porém, não precisa só de engenheiros. A população envelhece, a saúde vai pedir mais gente e outra formação, e faltam professores. O plano olha para todas as carreiras com três perguntas: vai faltar gente? A formação demora? O governo tem como mudar o quadro, regulando cursos, abrindo vagas públicas ou direcionando Fies, Prouni e bolsas? Onde as três respostas são sim, o plano age. Nas demais carreiras, como direito e administração, que concentram boa parte das matrículas privadas, o plano mantém o que existe e cobra qualidade pelo Enade.</p>
+<div class="table-wrap"><table class="cards">
+<thead>
+<tr>
+<th>Carreira</th>
+<th>Situação hoje</th>
+<th>O que vem pela frente</th>
+<th>O que o plano faz</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="Carreira">Engenharia e tecnologia</td><td data-label="Situação hoje">96 mil engenheiros formados (2023), evasão de cerca de 61%, 58% dos ingressantes em EaD; na área de tecnologia, o setor estima demanda de 159 mil pessoas por ano para 53 mil formadas (Brasscom, estudo de 2021)</td><td data-label="O que vem pela frente">Missões industriais, IA e transição energética pedem mais</td><td data-label="O que o plano faz">EDU-04 (140 mil engenheiros por ano) e EDU-07 (Instituto de IA)</td></tr>
+<tr><td data-label="Carreira">Medicina</td><td data-label="Situação hoje">Cerca de 636 mil médicos em 2025, ou 2,98 por mil habitantes (OCDE: 3,6); 389 cursos e 44 mil vagas por ano (2024); no Enamed 2025, 107 de 351 cursos tiveram nota 1 ou 2, e 13,9 mil dos 39,3 mil formandos (35%) saíram deles</td><td data-label="O que vem pela frente">A quantidade se resolve sozinha: a projeção é de 1,15 milhão de médicos em 2035 (5,2 por mil). O problema passa a ser a qualidade da formação e a distribuição: o Distrito Federal tem 6,3 médicos por mil habitantes, e o Maranhão, 1,3</td><td data-label="O que o plano faz">EDU-10 (qualidade dos cursos). Quantidade, distribuição e residência ficam na página de Saúde</td></tr>
+<tr><td data-label="Carreira">Enfermagem e técnicos de saúde</td><td data-label="Situação hoje">3,2 milhões de profissionais de enfermagem registrados (Cofen, 2025)</td><td data-label="O que vem pela frente">Envelhecimento e doenças crônicas pedem mais cuidado contínuo, não só médico</td><td data-label="O que o plano faz">Técnicos de enfermagem, radiologia e manutenção de equipamentos formados na rede técnica (página de Saúde, complexo industrial); cursos de enfermagem avaliados pelo Enade como os de medicina</td></tr>
+<tr><td data-label="Carreira">Cuidado de idosos</td><td data-label="Situação hoje">Profissão sem regulamentação e quase toda informal; os cuidadores com carteira passaram de 5,3 mil (2012) para 34 mil (2022)</td><td data-label="O que vem pela frente">A população com 60 anos ou mais vai de cerca de 33 milhões (2023) para 75 milhões em 2070 (IBGE)</td><td data-label="O que o plano faz">EDU-11 (cuidado de idosos como profissão)</td></tr>
+<tr><td data-label="Carreira">Professores</td><td data-label="Situação hoje">Falta projetada de 235 mil até 2040; falta de professor de física em 16 estados e de matemática em 10</td><td data-label="O que vem pela frente">Menos alunos, mas aposentadorias em massa e exigência maior</td><td data-label="O que o plano faz">EDU-05 (matemática, física e química), Mais Professores e Prova Nacional Docente</td></tr>
+</tbody>
+</table></div>
+<p><strong>O que muda com a demografia.</strong> Até 2040 haverá menos crianças e mais idosos. Por isso o plano trata saúde e cuidado como frentes de formação que crescem, ao lado da indústria. Elas também são a porta de entrada para os adultos de 50 a 64 anos que vão se requalificar (EDU-08).</p>
 <h2 id="educacao-inteligencia-artificial-na-educacao">Inteligência artificial na educação</h2>
 <p>A IA entra no plano como amplificador de um sistema que funciona, não como motor. A evidência experimental de 2024 a 2026 é consistente: tutoria com IA rende de 0,2 a 0,6 desvio-padrão quando há guardrails pedagógicos, conteúdo validado por professores e supervisão; prejudica quando dá respostas prontas (queda de 17% na prova sem IA no estudo da Turquia); e rende quase nada quando ninguém garante o uso (0,06 a 0,14 DP no Khanmigo, nos EUA).</p>
 <p><strong>O que os países fizeram e o que deu errado</strong></p>
@@ -1221,13 +1386,13 @@ footer b{color:var(--ink)}
 <li>O Fundeb continua como base da educação básica, com parte dos recursos novos ligada a resultados de aprendizagem.</li>
 <li>Um fundo para o ensino técnico reúne recursos do Sistema S, do MEC e das empresas.</li>
 <li>Empresas que recebem incentivos das missões têm contrapartida obrigatória em vagas de aprendiz e estágio.</li>
-<li>O gasto educacional total fica perto do atual (cerca de 5,5% do PIB), mas o crescimento vai para alfabetização, ensino técnico e engenharia.</li>
+<li>O gasto educacional total fica perto do atual (cerca de 4,5% do PIB, dado de 2023), mas o crescimento vai para alfabetização, ensino técnico e engenharia.</li>
 </ul>
 <p><strong>Governança</strong></p>
 <ul>
 <li>O MEC e o MDIC dividem a coordenação do ensino técnico, com assento no Conselho Nacional de Desenvolvimento Industrial.</li>
 <li>Comitês regionais com escolas, empresas e governos estaduais definem os cursos de cada polo.</li>
-<li>Metas públicas por estado e por escola, com acompanhamento no painel do plano.</li>
+<li>Metas públicas por estado e por escola, com acompanhamento no painel do plano. As metas de cada estado e município são combinadas nas instâncias do Sistema Nacional de Educação (Lei Complementar 220/2025), sem criar estrutura nova.</li>
 </ul>
 <h2 id="educacao-metas-2030-2035-e-2040">Metas 2030, 2035 e 2040</h2>
 <p>As metas seguem o calendário do eixo central, para que a formação de pessoas ande à frente dos investimentos industriais.</p>
@@ -1252,10 +1417,11 @@ footer b{color:var(--ink)}
 <tr><td data-label="Indicador">Jovens aprendizes (milhões)</td><td data-label="Hoje (verificado)">0,73 (2026)</td><td data-label="2030">1,0</td><td data-label="2035">1,5</td><td data-label="2040">2,0</td></tr>
 <tr><td data-label="Indicador">Professores com formação em IA no ano</td><td data-label="Hoje (verificado)">31% (2025)</td><td data-label="2030">80%</td><td data-label="2035">90%</td><td data-label="2040">90%</td></tr>
 <tr><td data-label="Indicador">Trabalhadores requalificados (milhões, acumulado)</td><td data-label="Hoje (verificado)">0</td><td data-label="2030">0,5</td><td data-label="2035">1,2</td><td data-label="2040">2,0</td></tr>
+<tr><td data-label="Indicador">Cursos de medicina com nota 1 ou 2 no Enamed</td><td data-label="Hoje (verificado)">30% (2025)</td><td data-label="2030">15%</td><td data-label="2035">5%</td><td data-label="2040">0%</td></tr>
 </tbody>
 </table></div>
 <blockquote>
-<p><strong>O que a demografia muda aqui.</strong> O público do ensino fundamental cai 22% e o do médio 15% até 2040, enquanto os adultos de 50 a 64 anos crescem 24%. Menos alunos são a chance de elevar o gasto por aluno sem elevar o orçamento, e a formação técnica precisa atender adultos que já trabalham, não só jovens. Os números estão em <a href="#brasileiro">Quem é o brasileiro: hoje, 2040 e 2070</a>.</p>
+<p><strong>O que a demografia muda aqui.</strong> O público do ensino fundamental cai 22% e o do médio 15% até 2040, enquanto os adultos de 50 a 64 anos crescem 24%. Menos alunos são a chance de elevar o gasto por aluno sem elevar o orçamento, e a formação técnica precisa atender adultos que já trabalham, não só jovens. Os números estão na página Quem é o brasileiro, em Quem é o brasileiro: hoje, 2040 e 2070.</p>
 </blockquote>
 <p>Os números de 2040 para ensino técnico e requalificação batem com os da página do plano industrial.</p>
 <p><strong>Efeito da demografia nas metas.</strong> Pelas projeções do IBGE, o público do ensino fundamental cai 22% e o do ensino médio 15% até 2040; em 2040 haverá só 7,4 milhões de pessoas de 15 a 17 anos. Isso tem dois efeitos. Primeiro, o "dividendo educacional": com menos alunos, o mesmo orçamento permite mais gasto por aluno, e o plano trava esse ganho na educação em vez de deixá-lo escorrer para outras despesas. Segundo, a meta de 5 milhões de matrículas técnicas em 2040 não cabe só em jovens: ela se divide em cerca de 3 milhões no ensino médio e 2 milhões em cursos para adultos e trabalhadores em requalificação, que passam a ser público central, não residual.</p>
@@ -1310,11 +1476,13 @@ footer b{color:var(--ink)}
 <li><a href="https://movimentoeconomico.com.br/tecnologia/2026/08/20/supercomputador-de-r-1-bi-no-rn-segue-plano-de-soberania-digital-e-ia-no-brasil/" target="_blank" rel="noopener">Movimento Econômico, supercomputador de R$ 1 bi no RN</a></li>
 <li><a href="https://www.bibb.de/de/134898.php" target="_blank" rel="noopener">BIBB, Standardberufsbildpositionen</a></li>
 </ul>
+<p>Para as seções "Como a educação funciona" e "Os indicadores": <a href="https://claude.ai/artifact/QwwZrNMPDmystmrDfKjrYD" target="_blank" rel="noopener">Painel da Educação</a>; OCDE, PISA 2025 Results, volume I; OCDE, Education at a Glance 2026, notas de país; Eurostat, tabela educ_uoe_enra13 (ensino técnico na Europa); Inep, Censo Escolar 2025 e Ideb 2025; FNDE, Siope. Três estudos de apoio da área (o mapa da educação federal, as peças da máquina da educação e as fontes oficiais de dados) serão publicados junto com o plano.</p>
+<p>Para a seção "Ensino superior" e as propostas EDU-10 e EDU-11: Demografia Médica no Brasil 2025 (FMUSP e CFM); resultados do Enamed 2025 e sanções do MEC (janeiro de 2026); Cofen, número de profissionais de enfermagem (2025); Caged, cuidadores de idosos com carteira assinada; Brasscom, demanda de profissionais de tecnologia (estudo de 2021); IBGE, projeções da população com 60 anos ou mais.</p>
 <p>Números ainda aproximados ou não verificados: matrículas do Senai (cerca de 2,78 milhões, fonte fraca), déficit de engenheiros (estimativa setorial da CNI), execução do PBIA (R$ 14,2 bilhões, só na imprensa) e contribuição anual do Brasil ao CERN (não localizada).</p>
 <h2 id="educacao-propostas">Propostas</h2>
-<p>Cada proposta tem um código fixo, para ser citada, perguntada e acompanhada. A frase diz o que muda; o número diz a meta e o prazo; o resto explica de onde partimos, como funciona, quem paga e quais os riscos. O detalhe está nas seções desta página indicadas em "Saiba mais".</p><ol class="ficha-idx"><li><a href="#educacao" data-target="edu-01"><b>EDU-01</b>Toda criança lendo até o fim do 2º ano, no modelo do Ceará</a></li><li><a href="#educacao" data-target="edu-02"><b>EDU-02</b>Matemática: o gargalo número um</a></li><li><a href="#educacao" data-target="edu-03"><b>EDU-03</b>Metade do ensino médio com curso técnico, parte na escola e parte na empresa</a></li><li><a href="#educacao" data-target="edu-04"><b>EDU-04</b>140 mil engenheiros por ano, com menos evasão</a></li><li><a href="#educacao" data-target="edu-05"><b>EDU-05</b>Professores de matemática, física e química</a></li><li><a href="#educacao" data-target="edu-06"><b>EDU-06</b>Inteligência artificial na escola: professores primeiro</a></li><li><a href="#educacao" data-target="edu-07"><b>EDU-07</b>Instituto Nacional de IA Aplicada e Computação</a></li><li><a href="#educacao" data-target="edu-08"><b>EDU-08</b>Requalificar 2 milhões de trabalhadores adultos</a></li><li><a href="#educacao" data-target="edu-09"><b>EDU-09</b>Menos alunos, mais dinheiro por aluno</a></li></ol>
+<p>Cada proposta tem um código fixo, para ser citada, perguntada e acompanhada. A frase diz o que muda; o número diz a meta e o prazo; o resto explica de onde partimos, como funciona, quem paga e quais os riscos. O detalhe está nas seções desta página indicadas em "Saiba mais".</p><ol class="ficha-idx"><li><a href="#educacao" data-target="edu-01"><b>EDU-01</b>Toda criança lendo até o fim do 2º ano, no modelo do Ceará</a></li><li><a href="#educacao" data-target="edu-02"><b>EDU-02</b>Matemática: o gargalo número um</a></li><li><a href="#educacao" data-target="edu-03"><b>EDU-03</b>Metade do ensino médio com curso técnico, parte na escola e parte na empresa</a></li><li><a href="#educacao" data-target="edu-04"><b>EDU-04</b>140 mil engenheiros por ano, com menos evasão</a></li><li><a href="#educacao" data-target="edu-05"><b>EDU-05</b>Professores de matemática, física e química</a></li><li><a href="#educacao" data-target="edu-06"><b>EDU-06</b>Inteligência artificial na escola: professores primeiro</a></li><li><a href="#educacao" data-target="edu-07"><b>EDU-07</b>Instituto Nacional de IA Aplicada e Computação</a></li><li><a href="#educacao" data-target="edu-08"><b>EDU-08</b>Requalificar 2 milhões de trabalhadores adultos</a></li><li><a href="#educacao" data-target="edu-09"><b>EDU-09</b>Menos alunos, mais dinheiro por aluno</a></li><li><a href="#educacao" data-target="edu-10"><b>EDU-10</b>Médicos bem formados: qualidade antes de quantidade</a></li><li><a href="#educacao" data-target="edu-11"><b>EDU-11</b>Cuidado de idosos como profissão</a></li></ol>
 <article class="ficha" id="edu-01"><p class="code">EDU-01</p><h3>Toda criança lendo até o fim do 2º ano, no modelo do Ceará</h3><p class="frase">Levar ao país inteiro as cinco peças do Ceará: meta única, prova anual de cada criança, material e formação para o professor, estado ajudando os municípios e repasse de ICMS ligado a resultado.</p><p class="num"><span>O número</span>Crianças alfabetizadas ao fim do 2º ano de 66% (2025) para 80% em 2030 e 95% em 2040.</p><details><summary>Para quem, como funciona, quem paga e riscos</summary><div class="campo"><h4>Para quem</h4><p>As crianças do 1º e do 2º ano (cerca de 6 milhões), seus professores e os 5.570 municípios, donos das escolas dessa etapa.</p></div><div class="campo"><h4>De onde partimos</h4><p>O Compromisso Nacional Criança Alfabetizada (2023, lei em 2025) já copiou o Ceará e levou o país de 56% para 66%. Mas o TCU achou execução de R$ 1 bilhão em R$ 3 bilhões e dez estados sem comitê, e 12 estados distribuem só o mínimo de ICMS por resultado.</p></div><div class="campo"><h4>Como funciona</h4><p>Piso do ICMS por resultado de 10 para 18 pontos, como no Ceará; prova anual de todas as crianças do 2º ano, paga pela União, com resultado por escola; formadores regionais e material estruturado pagos pelo Fundeb; pagamento automático dos prêmios no ano seguinte, em lei.</p></div><div class="campo"><h4>Quem paga</h4><p>Fundeb (parcela por resultado) e o orçamento já previsto do programa federal, hoje mal executado.</p></div><div class="campo"><h4>Riscos e respostas</h4><p>Ensino só para a prova: estender o modelo à matemática. Régua baixa: subir gradualmente e publicar também o nível desejável. Dependência de continuidade: mecanismo em lei federal, não em programa de governo.</p></div><div class="campo"><h4>Saiba mais</h4><p>Seção "<a href="#educacao" data-target="educacao-o-modelo-do-ceara-como-funciona-e-por-qu">O modelo do Ceará</a>".</p></div></details></article>
-<article class="ficha" id="edu-02"><p class="code">EDU-02</p><h3>Matemática: o gargalo número um</h3><p class="frase">Fazer com a matemática dos anos finais e do ensino médio o que o Ceará fez com a leitura: meta, prova, material estruturado e professores formados.</p><p class="num"><span>O número</span>Alunos de 15 anos no nível básico de matemática (PISA) de 28% para 65% em 2040; concluintes do ensino médio com matemática adequada de 5,2% para 30%.</p><details><summary>Para quem, como funciona, quem paga e riscos</summary><div class="campo"><h4>Para quem</h4><p>26 milhões de alunos do fundamental e 8,7 milhões do ensino médio; professores de matemática, que faltam em 10 estados.</p></div><div class="campo"><h4>De onde partimos</h4><p>72% dos alunos de 15 anos estão abaixo do nível básico (na OCDE, 35%); até o Ceará ficou em 14º em matemática no TIMSS; o novo PNE tem metas, mas não tem cobrança anual.</p></div><div class="campo"><h4>Como funciona</h4><p>Avaliação própria e material estruturado de matemática; laboratórios, robótica e olimpíadas; pensamento computacional começando por atividades sem computador; tutoria estruturada, com inteligência artificial só em modo tutor onde for testada; matemática entre os critérios da parcela por resultado do Fundeb.</p></div><div class="campo"><h4>Quem paga</h4><p>Fundeb e o dinheiro liberado pela queda do número de alunos.</p></div><div class="campo"><h4>Riscos e respostas</h4><p>Falta de professores: proposta EDU-05.</p></div><div class="campo"><h4>Saiba mais</h4><p>Seções "<a href="#educacao" data-target="educacao-diagnostico">Diagnóstico</a>" e "<a href="#educacao" data-target="educacao-medidas-por-etapa">Medidas por etapa</a>".</p></div></details></article>
+<article class="ficha" id="edu-02"><p class="code">EDU-02</p><h3>Matemática: o gargalo número um</h3><p class="frase">Fazer com a matemática dos anos finais e do ensino médio o que o Ceará fez com a leitura: meta, prova, material estruturado e professores formados.</p><p class="num"><span>O número</span>Alunos de 15 anos no nível básico de matemática (PISA) de 28% para 65% em 2040; concluintes do ensino médio com matemática adequada de 5,2% para 30%.</p><details><summary>Para quem, como funciona, quem paga e riscos</summary><div class="campo"><h4>Para quem</h4><p>25,8 milhões de alunos do fundamental e 7,3 milhões do ensino médio; professores de matemática, que faltam em 10 estados.</p></div><div class="campo"><h4>De onde partimos</h4><p>72% dos alunos de 15 anos estão abaixo do nível básico (na OCDE, 35%); até o Ceará ficou em 14º em matemática no TIMSS; o novo PNE tem metas, mas não tem cobrança anual.</p></div><div class="campo"><h4>Como funciona</h4><p>Avaliação própria e material estruturado de matemática; laboratórios, robótica e olimpíadas; pensamento computacional começando por atividades sem computador; tutoria estruturada, com inteligência artificial só em modo tutor onde for testada; matemática entre os critérios da parcela por resultado do Fundeb.</p></div><div class="campo"><h4>Quem paga</h4><p>Fundeb e o dinheiro liberado pela queda do número de alunos.</p></div><div class="campo"><h4>Riscos e respostas</h4><p>Falta de professores: proposta EDU-05.</p></div><div class="campo"><h4>Saiba mais</h4><p>Seções "<a href="#educacao" data-target="educacao-diagnostico">Diagnóstico</a>" e "<a href="#educacao" data-target="educacao-medidas-por-etapa">Medidas por etapa</a>".</p></div></details></article>
 <article class="ficha" id="edu-03"><p class="code">EDU-03</p><h3>Metade do ensino médio com curso técnico, parte na escola e parte na empresa</h3><p class="frase">Transformar o curso técnico de "segunda opção" em caminho normal de metade dos jovens, com certificado que vale para a faculdade e aprendizado dentro da empresa.</p><p class="num"><span>O número</span>Alunos do ensino médio em curso técnico de 21,5% (2025) para 50% em 2040; jovens aprendizes de 730 mil para 2 milhões.</p><details><summary>Para quem, como funciona, quem paga e riscos</summary><div class="campo"><h4>Para quem</h4><p>8,7 milhões de jovens de 15 a 17 anos; empresas que precisam de técnicos; redes estaduais, que têm 82% da oferta pública.</p></div><div class="campo"><h4>De onde partimos</h4><p>O novo PNE já tem a meta de 50%; Juros por Educação (22 estados, 600 mil vagas); lei do ensino médio de 2024 com itinerário técnico; Pé-de-Meia com 4 milhões de alunos; Lei do Aprendiz; o Piauí já tem 68,8% do ensino médio em curso técnico.</p></div><div class="campo"><h4>Como funciona</h4><p>Modelo dual, com contrato de aprendiz; catálogo de cursos definido com as empresas de cada polo; expansão pelo Senai, institutos federais e estados antes da chegada das fábricas; certificação nacional; professores vindos da indústria; parte do Pé-de-Meia ligada à frequência em curso técnico; apoio federal ao tempo integral recomposto.</p></div><div class="campo"><h4>Quem paga</h4><p>Fundo do ensino técnico com recursos do Sistema S, do MEC e das empresas; vagas de aprendiz como contrapartida obrigatória de quem recebe incentivo industrial; Juros por Educação tornado permanente.</p></div><div class="campo"><h4>Riscos e respostas</h4><p>Formar para vagas que não chegam: cursos ligados à carteira de projetos das missões. Técnico como "segunda opção": certificado que dá acesso à faculdade e salários iniciais divulgados.</p></div><div class="campo"><h4>Saiba mais</h4><p>Seção "<a href="#educacao" data-target="educacao-ensino-tecnico-e-engenharia-o-nucleo-da-">Ensino técnico e engenharia</a>".</p></div></details></article>
 <article class="ficha" id="edu-04"><p class="code">EDU-04</p><h3>140 mil engenheiros por ano, com menos evasão</h3><p class="frase">Formar mais engenheiros e tecnólogos para as fábricas das missões, cortando a evasão que hoje leva 6 em cada 10 alunos.</p><p class="num"><span>O número</span>Concluintes em engenharia de 96 mil (2023) para 140 mil por ano em 2040; evasão de 61% para 40%.</p><details><summary>Para quem, como funciona, quem paga e riscos</summary><div class="campo"><h4>Para quem</h4><p>Os 21 milhões de jovens de 18 a 24 anos; universidades; empresas das missões.</p></div><div class="campo"><h4>De onde partimos</h4><p>Os concluintes caíram de 129 mil (2018) para 96 mil (2023); 58% dos ingressantes de 2024 estão em ensino a distância; a evasão se concentra em cálculo e física no primeiro ano.</p></div><div class="campo"><h4>Como funciona</h4><p>Bolsa de permanência; ciclo básico reforçado; estágio obrigatório na indústria e trabalho de conclusão com problema real de empresa; cursos tecnológicos curtos de 2 a 3 anos; programa de retorno de engenheiros e cientistas que estão no exterior.</p></div><div class="campo"><h4>Quem paga</h4><p>Bolsas da Capes e do CNPq redirecionadas; empresas, nos estágios; orçamento das universidades.</p></div><div class="campo"><h4>Riscos e respostas</h4><p>Ensino a distância de baixa qualidade: avaliação e exigência de laboratório presencial.</p></div><div class="campo"><h4>Saiba mais</h4><p>Seção "<a href="#educacao" data-target="educacao-ensino-tecnico-e-engenharia-o-nucleo-da-">Ensino técnico e engenharia</a>".</p></div></details></article>
 <article class="ficha" id="edu-05"><p class="code">EDU-05</p><h3>Professores de matemática, física e química</h3><p class="frase">Pagar melhor e formar melhor quem ensina exatas, trazendo também profissionais da indústria para a sala de aula.</p><p class="num"><span>O número</span>Zerar a falta de professores de física (hoje em 16 estados) e de matemática (10 estados) até 2035; a carência projetada é de 235 mil professores até 2040.</p><details><summary>Para quem, como funciona, quem paga e riscos</summary><div class="campo"><h4>Para quem</h4><p>Professores da educação básica; alunos de escolas que hoje não têm professor de física.</p></div><div class="campo"><h4>De onde partimos</h4><p>O salário do professor é 86% do de outros graduados; Mais Professores, Pé-de-Meia Licenciaturas (matrículas de alto desempenho +60% em um ano) e Prova Nacional Docente (10 mil contratados em 2025).</p></div><div class="campo"><h4>Como funciona</h4><p>Carreira diferenciada para exatas e disciplinas técnicas, com piso maior e progressão por desempenho; residência pedagógica, como na medicina; Mais Professores direcionado por disciplina e região; profissionais da indústria com formação pedagógica curta.</p></div><div class="campo"><h4>Quem paga</h4><p>Fundeb e redes estaduais; União nas redes mais frágeis, com dinheiro ligado a metas.</p></div><div class="campo"><h4>Riscos e respostas</h4><p>Desigualdade entre estados: recursos federais extras condicionados.</p></div><div class="campo"><h4>Saiba mais</h4><p>Seção "<a href="#educacao" data-target="educacao-professores-financiamento-e-governanca">Professores, financiamento e governança</a>".</p></div></details></article>
@@ -1322,6 +1490,8 @@ footer b{color:var(--ink)}
 <article class="ficha" id="edu-07"><p class="code">EDU-07</p><h3>Instituto Nacional de IA Aplicada e Computação</h3><p class="frase">Criar a instituição em volta dos dois supercomputadores que o país já comprou, com governança inspirada no CERN: gente circulando e fornecedores nacionais.</p><p class="num"><span>O número</span>500 estudantes de verão e 300 professores por ano a partir de 2028, além dos 8 mil profissionais já previstos nos editais; cotas de computação para universidades, institutos federais e startups.</p><details><summary>Para quem, como funciona, quem paga e riscos</summary><div class="campo"><h4>Para quem</h4><p>Pesquisadores, estudantes, startups e indústrias que precisam de computação e de IA aplicada a saúde, energia, agro, indústria e língua portuguesa.</p></div><div class="campo"><h4>De onde partimos</h4><p>O Plano Brasileiro de IA (R$ 23 bilhões até 2028) licitou supercomputadores em Macaíba (RN) e no Rio; o Brasil é membro associado do CERN desde 2024. Falta a instituição em volta das máquinas.</p></div><div class="campo"><h4>Como funciona</h4><p>Lei própria com financiamento plurianual fora do contingenciamento; conselho com estados, universidades e indústria; rotação obrigatória de talentos de volta a universidades e empresas; licitações com conteúdo local preparadas pela Finep; doutorados industriais com mais da metade do custo pago pela indústria.</p></div><div class="campo"><h4>Quem paga</h4><p>Recursos já previstos do Plano Brasileiro de IA e do FNDCT; indústria nos doutorados.</p></div><div class="campo"><h4>Riscos e respostas</h4><p>Virar laboratório de modelos de fronteira, sempre atrasado: foco em IA aplicada. Captura por uma universidade: cotas e conselho plural.</p></div><div class="campo"><h4>Saiba mais</h4><p>Seção "<a href="#educacao" data-target="educacao-instituto-de-ia-aplicada-e-a-licao-do-ce">Instituto de IA aplicada e a lição do CERN</a>".</p></div></details></article>
 <article class="ficha" id="edu-08"><p class="code">EDU-08</p><h3>Requalificar 2 milhões de trabalhadores adultos</h3><p class="frase">Levar cursos profissionais curtos a quem já trabalha, porque a partir de 2035 não haverá jovens novos suficientes para as fábricas.</p><p class="num"><span>O número</span>2 milhões de trabalhadores requalificados até 2040; cerca de 2 dos 5 milhões de matrículas técnicas em cursos para adultos.</p><details><summary>Para quem, como funciona, quem paga e riscos</summary><div class="campo"><h4>Para quem</h4><p>Trabalhadores informais (38% dos ocupados), mulheres fora do mercado e pessoas de 50 a 64 anos, grupo que cresce 24% até 2040.</p></div><div class="campo"><h4>De onde partimos</h4><p>Educação de jovens e adultos pouco ligada a curso profissional; Senai e institutos federais; seguro-desemprego sem ligação com requalificação.</p></div><div class="campo"><h4>Como funciona</h4><p>EJA integrada a curso profissional; cursos curtos em automação, indústria verde e cuidados; bolsa e seguro durante a requalificação (página de Trabalho, a escrever); certificação nacional.</p></div><div class="campo"><h4>Quem paga</h4><p>Sistema S, Fundo de Amparo ao Trabalhador e empresas beneficiadas pelas missões.</p></div><div class="campo"><h4>Riscos e respostas</h4><p>Cursos sem emprego no fim: desenho com as empresas de cada polo.</p></div><div class="campo"><h4>Saiba mais</h4><p>Seção "<a href="#educacao" data-target="educacao-medidas-por-etapa">Medidas por etapa</a>" (formação ao longo da vida) e página "<a href="#brasileiro">Quem é o brasileiro</a>".</p></div></details></article>
 <article class="ficha" id="edu-09"><p class="code">EDU-09</p><h3>Menos alunos, mais dinheiro por aluno</h3><p class="frase">Com 22% menos alunos no fundamental até 2040, manter o orçamento da educação e gastar mais por aluno, em vez de deixar o dinheiro escorrer para outras despesas.</p><p class="num"><span>O número</span>Gasto por aluno de US$ 4.133 (um terço da OCDE) crescendo com a queda das matrículas; orçamento da educação mantido como parte da economia.</p><details><summary>Para quem, como funciona, quem paga e riscos</summary><div class="campo"><h4>Para quem</h4><p>Todos os alunos da rede pública; municípios pequenos, que vão perder escolas.</p></div><div class="campo"><h4>De onde partimos</h4><p>Gasto de 4,5% do PIB, caindo desde 2015 (5,5%); só 2,5% do Fundeb é distribuído por resultado.</p></div><div class="campo"><h4>Como funciona</h4><p>Regra de piso que mantém o gasto por etapa; parcela por resultado do Fundeb com mais peso e com matemática e matrícula técnica entre os critérios; planejamento para juntar escolas que perdem alunos sem perder qualidade; o dinheiro liberado vai para tempo integral e ensino técnico.</p></div><div class="campo"><h4>Quem paga</h4><p>Nenhum gasto novo: é a decisão de não cortar.</p></div><div class="campo"><h4>Riscos e respostas</h4><p>Pressão para cortar quando as matrículas caírem: regra em lei.</p></div><div class="campo"><h4>Saiba mais</h4><p>Quadro "O que a demografia muda aqui" e página "<a href="#brasileiro">Quem é o brasileiro</a>".</p></div></details></article>
+<article class="ficha" id="edu-10"><p class="code">EDU-10</p><h3>Médicos bem formados: qualidade antes de quantidade</h3><p class="frase">O Brasil já forma médicos suficientes para dobrar o total até 2035, então a prioridade passa a ser que cada curso forme bem.</p><p class="num"><span>O número</span>Cursos de medicina com nota 1 ou 2 no Enamed: de 30% (2025) para 15% em 2030 e nenhum em 2040.</p><details><summary>Para quem, como funciona, quem paga e riscos</summary><div class="campo"><h4>Para quem</h4><p>Os 39 mil formandos de medicina por ano e os pacientes que eles vão atender.</p></div><div class="campo"><h4>De onde partimos</h4><p>O Enamed, prova anual dos formandos criada em 2025, mostrou 107 de 351 cursos com nota 1 ou 2. Os resultados ruins se concentram nos cursos municipais (87,5% com nota 1 ou 2) e nos privados com fins lucrativos (58,4%), e os federais vão bem (5,1%). Em janeiro de 2026, o MEC já proibiu o vestibular nos cursos com nota 1 e cortou vagas em 46 cursos.</p></div><div class="campo"><h4>Como funciona</h4><p>Mantém as sanções do MEC e as torna regra permanente. Nenhum curso novo e nenhuma vaga nova onde a nota do Enamed for menor que 3. O resultado de cada curso fica público todo ano. Fies e Prouni só financiam cursos com nota 3 ou mais. Cursos novos só abrem em regiões com falta de médicos e com hospital-escola do SUS que dê conta do internato.</p></div><div class="campo"><h4>Quem paga</h4><p>Não há custo novo relevante. Usa o Enamed, o Fies e o Prouni, que já existem.</p></div><div class="campo"><h4>Riscos e respostas</h4><p>Instituições contestam o exame na Justiça. Resposta: a regra fica em lei ou em decreto, e a prova continua padronizada pelo Inep. Fechar vagas no interior pode piorar a distribuição. Resposta: a correção vem com o plano de melhoria do curso, e a distribuição dos médicos fica com a página de Saúde (Mais Médicos e residência).</p></div><div class="campo"><h4>Saiba mais</h4><p>Seção "<a href="#educacao" data-target="educacao-ensino-superior-as-profissoes-que-o-pais">Ensino superior: as profissões que o país vai precisar</a>" e página de Saúde, para quantidade, distribuição e residência médica.</p></div></details></article>
+<article class="ficha" id="edu-11"><p class="code">EDU-11</p><h3>Cuidado de idosos como profissão</h3><p class="frase">Transformar o cuidado de idosos, hoje informal e sem formação, em uma profissão com curso, certificado e carreira.</p><p class="num"><span>O número</span>Uma meta numérica depende de levantamento do número atual de cuidadores, que não existe. A primeira meta é que esse levantamento saia, com o IBGE e o Ministério do Trabalho, até 2027.</p><details><summary>Para quem, como funciona, quem paga e riscos</summary><div class="campo"><h4>Para quem</h4><p>Para os cuidadores, quase todos mulheres e informais; para as famílias de 33 milhões de idosos; para os adultos que vão se requalificar (EDU-08).</p></div><div class="campo"><h4>De onde partimos</h4><p>O emprego formal de cuidador cresceu mais de seis vezes em dez anos, mas a maior parte do trabalho segue informal, e a profissão não tem regulamentação.</p></div><div class="campo"><h4>Como funciona</h4><p>Curso técnico e curso curto de cuidador na rede técnica e no Senac, com certificação nacional. Entra no catálogo da requalificação de adultos e conecta com a política de cuidados (página de Trabalho, ainda a escrever).</p></div><div class="campo"><h4>Quem paga</h4><p>Sistema S, Fundo de Amparo ao Trabalhador e redes estaduais de ensino técnico.</p></div><div class="campo"><h4>Riscos e respostas</h4><p>Curso sem emprego no fim. Resposta: a formação vem junto com a contratação pelos serviços públicos de cuidado e pelas instituições de longa permanência.</p></div><div class="campo"><h4>Saiba mais</h4><p>Seção "<a href="#educacao" data-target="educacao-ensino-superior-as-profissoes-que-o-pais">Ensino superior: as profissões que o país vai precisar</a>" e página "<a href="#brasileiro">Quem é o brasileiro</a>".</p></div></details></article>
 </article>
 <nav class="pager"><a href="#nib" class="prev"><small>Anterior</small>Nova Indústria Brasil</a><a href="#saude" class="next"><small>Próxima</small>Saúde</a></nav>
 </section>
@@ -1438,7 +1608,7 @@ footer b{color:var(--ink)}
 </tbody>
 </table></div>
 <blockquote>
-<p><strong>O que a demografia muda aqui.</strong> Os idosos de 65 anos ou mais vão de 25,6 para 39,6 milhões até 2040 e os de 80 ou mais dobram, de 5,2 para 10 milhões; em 2070 serão 22,7 milhões. O sistema de cuidados precisa ser montado dentro deste plano, enquanto os muito velhos ainda são poucos, e a economia da longevidade é demanda garantida para o complexo industrial da saúde. Os números estão em <a href="#brasileiro">Quem é o brasileiro: hoje, 2040 e 2070</a>.</p>
+<p><strong>O que a demografia muda aqui.</strong> Os idosos de 65 anos ou mais vão de 25,6 para 39,6 milhões até 2040 e os de 80 ou mais dobram, de 5,2 para 10 milhões; em 2070 serão 22,7 milhões. O sistema de cuidados precisa ser montado dentro deste plano, enquanto os muito velhos ainda são poucos, e a economia da longevidade é demanda garantida para o complexo industrial da saúde. Os números estão na página Quem é o brasileiro, em Quem é o brasileiro: hoje, 2040 e 2070.</p>
 </blockquote>
 <p><strong>Envelhecimento e economia da longevidade.</strong> Pelas projeções do IBGE, a população com 65 anos ou mais vai de 25,6 milhões para 39,6 milhões até 2040, e a com 80 anos ou mais dobra, de 5,2 para 10 milhões. Isso muda a demanda do SUS (doenças crônicas, órteses e próteses, equipamentos de reabilitação, medicamentos de uso contínuo) e cria um mercado interno garantido para o complexo industrial da saúde, que o plano trata como linha própria, a economia da longevidade: dispositivos de assistência, tecnologia para cuidado domiciliar e monitoramento remoto. Pede também uma política de cuidados de longa duração, já prevista na Política Nacional de Cuidados (Lei 15.069/2024), com formação de cuidadores pela rede de ensino técnico e financiamento compartilhado entre União, estados e municípios. Sem isso, o custo do envelhecimento cai sobre as famílias, sobretudo sobre as mulheres, e tira trabalhadores da indústria.</p>
 <h2 id="saude-financiamento-e-governanca">Financiamento e governança</h2>
@@ -1529,11 +1699,145 @@ footer b{color:var(--ink)}
 <article class="ficha" id="sau-08"><p class="code">SAU-08</p><h3>Saúde mental e segurança no trabalho</h3><p class="frase">Reduzir os afastamentos por saúde mental e os acidentes de trabalho, usando os dados que o governo já tem e exigindo metas das empresas que recebem incentivo.</p><p class="num"><span>O número</span>Afastamentos do INSS por saúde mental 40% menores em 2040.</p><details><summary>Para quem, como funciona, quem paga e riscos</summary><div class="campo"><h4>Para quem</h4><p>Trabalhadores; empresas, com menos faltas; INSS, com menos benefícios.</p></div><div class="campo"><h4>De onde partimos</h4><p>A norma NR-1 já exige gestão de riscos psicossociais nas empresas; afastamentos por saúde mental lideram o INSS; dados do eSocial disponíveis.</p></div><div class="campo"><h4>Como funciona</h4><p>Ampliar os CAPS e a atenção psicossocial nas empresas; fiscalização com dados do eSocial; metas de redução de acidentes e afastamentos para quem recebe incentivo.</p></div><div class="campo"><h4>Quem paga</h4><p>SUS e empresas.</p></div><div class="campo"><h4>Riscos e respostas</h4><p>Subnotificação: cruzamento de dados do eSocial e do INSS.</p></div><div class="campo"><h4>Saiba mais</h4><p>Seção "<a href="#saude" data-target="saude-saude-da-populacao-e-produtividade">Saúde da população e produtividade</a>".</p></div></details></article>
 <article class="ficha" id="sau-09"><p class="code">SAU-09</p><h3>Atenção primária nos polos e doenças crônicas</h3><p class="frase">Equipes de saúde da família em todos os municípios com polo industrial e programas de hipertensão, diabetes e obesidade com metas, pagos em parte pelo imposto sobre o que faz mal.</p><p class="num"><span>O número</span>Cobertura da atenção primária nos polos industriais de 90% em 2030 e 100% em 2035.</p><details><summary>Para quem, como funciona, quem paga e riscos</summary><div class="campo"><h4>Para quem</h4><p>Moradores dos polos industriais; trabalhadores com doenças crônicas.</p></div><div class="campo"><h4>De onde partimos</h4><p>Mais Médicos; Novo PAC Saúde (postos e policlínicas); Agora Tem Especialistas; imposto seletivo da reforma tributária sobre bebidas açucaradas, álcool e tabaco.</p></div><div class="campo"><h4>Como funciona</h4><p>Vagas do Mais Médicos ligadas aos polos; agentes comunitários com prontuário digital; metas por município; parte da receita do imposto seletivo para prevenção.</p></div><div class="campo"><h4>Quem paga</h4><p>SUS e receita do imposto seletivo.</p></div><div class="campo"><h4>Riscos e respostas</h4><p>Municípios sem equipe: consórcios e apoio estadual.</p></div><div class="campo"><h4>Saiba mais</h4><p>Seção "<a href="#saude" data-target="saude-saude-da-populacao-e-produtividade">Saúde da população e produtividade</a>".</p></div></details></article>
 </article>
-<nav class="pager"><a href="#educacao" class="prev"><small>Anterior</small>Educação</a><a href="#palavras" class="next"><small>Próxima</small>Palavras do plano</a></nav>
+<nav class="pager"><a href="#educacao" class="prev"><small>Anterior</small>Educação</a><a href="#gatilhos" class="next"><small>Próxima</small>Gatilhos entre as áreas</a></nav>
+</section>
+<section class="view page" id="v-gatilhos" data-view="gatilhos" hidden>
+<header class="page-head"><p class="eyebrow">Como uma área puxa as outras</p><h1>Gatilhos entre as áreas</h1></header>
+<details class="toc"><summary>Nesta página <span>7 seções</span></summary><ol><li><a href="#gatilhos" data-target="gatilhos-resumo-em-2-minutos">Resumo em 2 minutos</a></li><li><a href="#gatilhos" data-target="gatilhos-a-regra">A regra</a></li><li><a href="#gatilhos" data-target="gatilhos-o-mapa-quem-puxa-quem">O mapa: quem puxa quem</a></li><li><a href="#gatilhos" data-target="gatilhos-as-perguntas-fixas-de-cada-area">As perguntas fixas de cada área</a></li><li><a href="#gatilhos" data-target="gatilhos-exemplo-completo-terras-raras">Exemplo completo: terras raras</a></li><li><a href="#gatilhos" data-target="gatilhos-gatilhos-que-ja-deveriam-ter-disparado">Gatilhos que já deveriam ter disparado</a></li><li><a href="#gatilhos" data-target="gatilhos-registro-de-mudancas">Registro de mudanças</a></li></ol></details>
+<article class="prose"><section class="resumo"><h2 id="gatilhos-resumo-em-2-minutos">Resumo em 2 minutos</h2><p><strong>Em uma frase.</strong> O plano vai mudar o tempo todo, e cada mudança em uma área puxa perguntas nas outras: esta página diz quem puxa quem, que perguntas cada área responde e registra cada vez que isso aconteceu.</p>
+<p><strong>Por que existe.</strong> Se a indústria decide refinar terras raras no Brasil, alguém precisa formar o engenheiro metalúrgico e o técnico de planta química cinco anos antes de a refinaria abrir. Se a saúde decide produzir 70% do que o SUS usa, a indústria precisa de uma missão e a educação, de farmacêuticos industriais. Sem um mecanismo, essas ligações dependem de alguém lembrar. Com ele, viram regra.</p>
+<p><strong>Como funciona.</strong> Três passos: quem muda algo pergunta "quem recebe isso?"; as áreas acionadas respondem a perguntas fixas, mesmo que a resposta seja "nada muda"; a troca fica registrada no fim desta página e em uma linha na página da área acionada.</p>
+<p><strong>O que você vai encontrar nesta página.</strong> A regra, o mapa de quem puxa quem, as perguntas fixas de cada área, um exemplo completo (terras raras) e o registro de mudanças.</p>
+</section>
+<h2 id="gatilhos-a-regra">A regra</h2>
+<ol>
+<li><strong>Toda mudança termina com uma pergunta.</strong> Quem cria, retira ou muda uma meta, uma missão, um projeto ou uma proposta olha o mapa abaixo e lista as áreas que recebem a mudança.</li>
+<li><strong>As áreas acionadas respondem.</strong> Cada uma responde às suas perguntas fixas em uma rodada. "Nada muda" também é resposta, e fica registrada.</li>
+<li><strong>A resposta vira texto no plano.</strong> O que mudou entra na página da área acionada (uma linha de proposta, uma linha de tabela ou uma meta) e uma linha curta no registro desta página.</li>
+<li><strong>A cada revisão de cinco anos, o mapa é refeito.</strong> Novas áreas, novas missões e novos públicos entram no mapa.</li>
+</ol>
+<h2 id="gatilhos-o-mapa-quem-puxa-quem">O mapa: quem puxa quem</h2>
+<p>A tabela parte das seções "Conexões com as outras áreas" que cada página já tem e das oito missões do plano industrial. Áreas ainda sem página (Tributação, Trabalho, Infraestrutura, Ciência e tecnologia, Desenvolvimento regional, Política externa, Meio ambiente) entram no mapa para que, quando forem escritas, já saibam o que devem a quem.</p>
+<div class="table-wrap"><table class="cards">
+<thead>
+<tr>
+<th>O que muda</th>
+<th>Área de origem</th>
+<th>Áreas acionadas</th>
+<th>O que elas precisam responder</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="O que muda">Uma missão industrial entra, sai ou muda de tamanho (ex.: refinar terras raras)</td><td data-label="Área de origem">Indústria</td><td data-label="Áreas acionadas">Educação, Infraestrutura, Desenvolvimento regional, Tributação, Meio ambiente, Política externa, Proteção social</td><td data-label="O que elas precisam responder">Educação: quem faz, quantos e até quando, como formar. Infraestrutura: energia, logística e rede digital do polo. Desenvolvimento regional: onde fica. Tributação: que incentivo e que contrapartida. Meio ambiente: licenciamento e risco. Política externa: mercado e parceiros. Proteção social: as famílias que perdem emprego estão no Cadastro Único? Inclusão produtiva (PS-15)</td></tr>
+<tr><td data-label="O que muda">A meta 2040 de uma missão muda (ex.: 2 ou 3 fábricas de chips)</td><td data-label="Área de origem">Indústria</td><td data-label="Áreas acionadas">Educação, Infraestrutura, Trabalho</td><td data-label="O que elas precisam responder">Educação: revisar metas de técnicos e engenheiros. Infraestrutura: capacidade dos polos. Trabalho: requalificação de quem sai de setores em queda</td></tr>
+<tr><td data-label="O que muda">A carteira de projetos de um polo muda</td><td data-label="Área de origem">Indústria</td><td data-label="Áreas acionadas">Educação, Desenvolvimento regional</td><td data-label="O que elas precisam responder">Educação: catálogo de cursos do polo. Desenvolvimento regional: escolas e moradia perto do polo</td></tr>
+<tr><td data-label="O que muda">Meta de ensino técnico ou de engenheiros muda</td><td data-label="Área de origem">Educação</td><td data-label="Áreas acionadas">Indústria, Trabalho, Tributação</td><td data-label="O que elas precisam responder">Indústria: a carteira de projetos ainda tem vagas para esse número? Trabalho: bolsas e seguro durante a formação. Tributação: incentivo a empresas que formam aprendizes</td></tr>
+<tr><td data-label="O que muda">Falta ou sobra de professores em uma disciplina</td><td data-label="Área de origem">Educação</td><td data-label="Áreas acionadas">Indústria, Ciência e tecnologia</td><td data-label="O que elas precisam responder">Indústria: profissionais das fábricas podem dar aula? Ciência e tecnologia: bolsas de licenciatura em exatas</td></tr>
+<tr><td data-label="O que muda">Meta do complexo industrial da saúde muda (hoje 70% da demanda do SUS)</td><td data-label="Área de origem">Saúde</td><td data-label="Áreas acionadas">Indústria, Educação, Ciência e tecnologia, Tributação</td><td data-label="O que elas precisam responder">Indústria: tamanho da missão e compras públicas. Educação: farmacêuticos industriais, engenheiros biomédicos, técnicos. Ciência e tecnologia: pesquisa clínica e biotecnologia. Tributação: desoneração de insumos</td></tr>
+<tr><td data-label="O que muda">Uma profissão da saúde ganha ou perde peso (ex.: cuidado de idosos, médicos no interior)</td><td data-label="Área de origem">Saúde</td><td data-label="Áreas acionadas">Educação, Trabalho</td><td data-label="O que elas precisam responder">Educação: qualidade e oferta dos cursos (EDU-10, EDU-11). Trabalho: carreira, regulamentação e política de cuidados</td></tr>
+<tr><td data-label="O que muda">Projeções de população mudam (IBGE revisa a cada 4 anos)</td><td data-label="Área de origem">Quem é o brasileiro</td><td data-label="Áreas acionadas">Educação, Saúde, Proteção social, Trabalho e Previdência, Indústria, Visão geral</td><td data-label="O que elas precisam responder">Educação: metas por aluno (EDU-09) e requalificação (EDU-08). Saúde: leitos e cuidado de idosos. Trabalho e Previdência: idade de aposentadoria e cuidados. Indústria: tamanho da força de trabalho. Visão geral: as três fases até 2070. Proteção social: refazer a projeção do BPC (PS-11), o custo do benefício por criança (PS-06) e a meta de cuidados (PS-13)</td></tr>
+<tr><td data-label="O que muda">Valores e confiança mudam (Índice de Confiança)</td><td data-label="Área de origem">Quem é o brasileiro</td><td data-label="Áreas acionadas">Visão geral, Segurança pública, Governo</td><td data-label="O que elas precisam responder">Visão geral: meta de confiança. Segurança e Governo: o que explica a mudança</td></tr>
+<tr><td data-label="O que muda">Incentivo fiscal ou contrapartida muda</td><td data-label="Área de origem">Tributação</td><td data-label="Áreas acionadas">Indústria, Educação</td><td data-label="O que elas precisam responder">Indústria: IND-02 (incentivo só com contrapartida). Educação: vagas de aprendiz como contrapartida</td></tr>
+<tr><td data-label="O que muda">Energia, ferrovia, porto ou gás de um polo atrasa</td><td data-label="Área de origem">Infraestrutura</td><td data-label="Áreas acionadas">Indústria, Desenvolvimento regional</td><td data-label="O que elas precisam responder">Indústria: cronograma da missão. Desenvolvimento regional: prioridade entre polos</td></tr>
+<tr><td data-label="O que muda">Instituto de IA ou centro tecnológico muda de escopo</td><td data-label="Área de origem">Ciência e tecnologia</td><td data-label="Áreas acionadas">Educação, Saúde, Indústria</td><td data-label="O que elas precisam responder">Educação: doutorados e professores. Saúde: IA aplicada. Indústria: automação e software industrial</td></tr>
+<tr><td data-label="O que muda">Política de cuidados ou de requalificação muda</td><td data-label="Área de origem">Trabalho</td><td data-label="Áreas acionadas">Educação, Saúde</td><td data-label="O que elas precisam responder">Educação: catálogo de cursos curtos (EDU-08, EDU-11). Saúde: cuidado domiciliar e CAPS</td></tr>
+<tr><td data-label="O que muda">Meta de ensino técnico, ampliação do Pé-de-Meia ou mais tempo integral</td><td data-label="Área de origem">Educação</td><td data-label="Áreas acionadas">Proteção social</td><td data-label="O que elas precisam responder">Ajustar a poupança do Pé-de-Meia, o calendário de frequência e a regra de condicionalidade</td></tr>
+<tr><td data-label="O que muda">Atenção domiciliar, política de cuidados no SUS ou calendário de vacinas muda</td><td data-label="Área de origem">Saúde</td><td data-label="Áreas acionadas">Proteção social</td><td data-label="O que elas precisam responder">Rever a rede de cuidados (PS-13), as condicionalidades de saúde (PS-08) e a avaliação do BPC (PS-10)</td></tr>
+<tr><td data-label="O que muda">Regra do salário mínimo, seguro-desemprego ou nível de desemprego muda</td><td data-label="Área de origem">Trabalho</td><td data-label="Áreas acionadas">Proteção social</td><td data-label="O que elas precisam responder">Recalcular o BPC, que vale um salário mínimo; rever a Regra de Proteção, cujo prazo de 12 meses segue o seguro-desemprego</td></tr>
+<tr><td data-label="O que muda">Decisão judicial amplia benefícios previdenciários</td><td data-label="Área de origem">Trabalho (previdência)</td><td data-label="Áreas acionadas">Proteção social, Tributação</td><td data-label="O que elas precisam responder">Proteção social: efeito no BPC. Tributação: efeito no espaço fiscal</td></tr>
+<tr><td data-label="O que muda">Desastre climático (cheia, seca, calor extremo)</td><td data-label="Área de origem">Desenvolvimento regional</td><td data-label="Áreas acionadas">Proteção social, Saúde, Infraestrutura</td><td data-label="O que elas precisam responder">Proteção social: acionar a regra de desastres (PS-14) e a prioridade do Gás do Povo. Saúde: vigilância e atendimento. Infraestrutura: reconstrução</td></tr>
+<tr><td data-label="O que muda">Imposto de Renda (dedução por dependente) ou devolução de tributos a famílias de baixa renda muda</td><td data-label="Área de origem">Tributação</td><td data-label="Áreas acionadas">Proteção social</td><td data-label="O que elas precisam responder">Rever o benefício por criança (PS-06) para não pagar duas vezes pela mesma necessidade</td></tr>
+<tr><td data-label="O que muda">Reajuste anual do Bolsa Família e da linha de entrada (PS-01)</td><td data-label="Área de origem">Proteção social</td><td data-label="Áreas acionadas">Tributação</td><td data-label="O que elas precisam responder">Quanto custa por ano? Cabe no limite de 2,5% acima da inflação? Que despesa cede?</td></tr>
+<tr><td data-label="O que muda">Regra de Proteção automática e Cadastro Único conferido todo mês (PS-02, PS-03)</td><td data-label="Área de origem">Proteção social</td><td data-label="Áreas acionadas">Trabalho, Tributação</td><td data-label="O que elas precisam responder">Trabalho: o eSocial e o CNIS entregam dados por mês e por pessoa? Como garantir que o emprego formal nunca faça a família perder tudo de uma vez? Tributação: a Receita libera dados de renda com segurança?</td></tr>
+<tr><td data-label="O que muda">Benefício por criança, com fusão de abono, salário-família e dedução por dependente (PS-06)</td><td data-label="Área de origem">Proteção social</td><td data-label="Áreas acionadas">Tributação, Trabalho, Quem é o brasileiro</td><td data-label="O que elas precisam responder">Tributação: quanto se economiza com o fim da dedução? Trabalho: como fica o abono depois de 2035? Quem é o brasileiro: quantas crianças haverá em 2035 e 2040?</td></tr>
+<tr><td data-label="O que muda">Condicionalidades que protegem (PS-08)</td><td data-label="Área de origem">Proteção social</td><td data-label="Áreas acionadas">Educação, Saúde</td><td data-label="O que elas precisam responder">Educação: a escola registra a frequência a tempo? Saúde: a equipe de saúde da família acompanha gestantes e crianças até 7 anos do Cadastro Único?</td></tr>
+<tr><td data-label="O que muda">Pé-de-Meia avaliado e ligado ao ensino técnico (PS-09)</td><td data-label="Área de origem">Proteção social</td><td data-label="Áreas acionadas">Educação, Indústria</td><td data-label="O que elas precisam responder">Educação: há vagas de ensino técnico onde estão os jovens pobres? Indústria: que cursos levam a empregos reais?</td></tr>
+<tr><td data-label="O que muda">Regulamento e projeção do BPC (PS-10, PS-11)</td><td data-label="Área de origem">Proteção social</td><td data-label="Áreas acionadas">Saúde, Quem é o brasileiro, Tributação</td><td data-label="O que elas precisam responder">Saúde: o SUS tem equipe para avaliar a deficiência? Quem é o brasileiro: qual a projeção de idosos e pessoas com deficiência por idade? Tributação: qual o espaço fiscal até 2040?</td></tr>
+<tr><td data-label="O que muda">BPC e previdência (PS-12)</td><td data-label="Área de origem">Proteção social</td><td data-label="Áreas acionadas">Trabalho, Tributação, Quem é o brasileiro</td><td data-label="O que elas precisam responder">Trabalho e Tributação: como subir a contribuição de quem ganha pouco? Quem é o brasileiro: quantos idosos sem aposentadoria haverá em 2040?</td></tr>
+<tr><td data-label="O que muda">Rede de cuidado em casa (PS-13)</td><td data-label="Área de origem">Proteção social</td><td data-label="Áreas acionadas">Saúde, Trabalho, Educação, Quem é o brasileiro</td><td data-label="O que elas precisam responder">Quem é o brasileiro: quantos idosos de 80 anos ou mais haverá? Saúde: a atenção domiciliar do SUS chega até eles? Educação e Trabalho: quem forma e emprega as cuidadoras (EDU-11)?</td></tr>
+<tr><td data-label="O que muda">Regra permanente para desastres (PS-14)</td><td data-label="Área de origem">Proteção social</td><td data-label="Áreas acionadas">Desenvolvimento regional</td><td data-label="O que elas precisam responder">Quais municípios estão em área de risco? O endereço do Cadastro Único bate com os mapas da Defesa Civil?</td></tr>
+<tr><td data-label="O que muda">Inclusão produtiva com pacote completo (PS-15)</td><td data-label="Área de origem">Proteção social</td><td data-label="Áreas acionadas">Trabalho, Desenvolvimento regional, Indústria</td><td data-label="O que elas precisam responder">Que vagas e cadeias produtivas existem em cada território? O SINE atende as famílias do Cadastro Único?</td></tr>
+<tr><td data-label="O que muda">Piso de financiamento do SUAS (PS-07)</td><td data-label="Área de origem">Proteção social</td><td data-label="Áreas acionadas">Desenvolvimento regional, Tributação</td><td data-label="O que elas precisam responder">Quais municípios pobres não conseguem manter equipe? Quanto o estado deve pagar?</td></tr>
+<tr><td data-label="O que muda">Gás do Povo e Tarifa Social medidos (PS-17)</td><td data-label="Área de origem">Proteção social</td><td data-label="Áreas acionadas">Indústria, Saúde</td><td data-label="O que elas precisam responder">Indústria: há revenda e preço de referência em cada município? Saúde: qual o efeito na saúde respiratória?</td></tr>
+</tbody>
+</table></div>
+<h2 id="gatilhos-as-perguntas-fixas-de-cada-area">As perguntas fixas de cada área</h2>
+<p>Quando acionada, cada área responde sempre às mesmas perguntas. Assim a resposta tem o mesmo formato em todo o plano e pode ser comparada.</p>
+<div class="table-wrap"><table class="cards two">
+<thead>
+<tr>
+<th>Área</th>
+<th>Perguntas que responde quando acionada</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="Área">Educação</td><td data-label="Perguntas que responde quando acionada">Quem faz isso (técnico, graduação, pesquisa, requalificação)? Quantos e até quando, comparando o prazo do projeto com o tempo de formação? O que já existe? O que ensinar? Como formar? Quem responde? O que muda no plano? As sete perguntas estão detalhadas na página de Educação</td></tr>
+<tr><td data-label="Área">Saúde</td><td data-label="Perguntas que responde quando acionada">Que profissional e que equipamento ou insumo a mudança pede? Que risco à saúde ela cria? O que o SUS já compra ou já faz?</td></tr>
+<tr><td data-label="Área">Indústria</td><td data-label="Perguntas que responde quando acionada">Que missão ou projeto recebe a mudança? Que demanda garantida (compras públicas) existe? Que fornecedor nacional já existe?</td></tr>
+<tr><td data-label="Área">Infraestrutura</td><td data-label="Perguntas que responde quando acionada">Quanta energia, que logística e que rede digital o projeto precisa, e até quando?</td></tr>
+<tr><td data-label="Área">Tributação</td><td data-label="Perguntas que responde quando acionada">Que incentivo se aplica, com que contrapartida e por quanto tempo? Quanto custa em arrecadação?</td></tr>
+<tr><td data-label="Área">Trabalho</td><td data-label="Perguntas que responde quando acionada">Quem perde emprego com a mudança e como se requalifica? Que proteção existe durante a transição?</td></tr>
+<tr><td data-label="Área">Desenvolvimento regional</td><td data-label="Perguntas que responde quando acionada">Onde fica, que região ganha e o que a região precisa receber junto (escola, moradia, saúde)?</td></tr>
+<tr><td data-label="Área">Ciência e tecnologia</td><td data-label="Perguntas que responde quando acionada">Que tecnologia o Brasil ainda não domina e quem pesquisa isso hoje?</td></tr>
+<tr><td data-label="Área">Meio ambiente</td><td data-label="Perguntas que responde quando acionada">Que licenciamento, que risco e que compensação a mudança exige?</td></tr>
+<tr><td data-label="Área">Política externa e comércio</td><td data-label="Perguntas que responde quando acionada">Que mercado, que parceiro e que acordo a mudança pede ou afeta?</td></tr>
+<tr><td data-label="Área">Quem é o brasileiro</td><td data-label="Perguntas que responde quando acionada">A mudança altera o público (idade, região, renda) de alguma meta?</td></tr>
+<tr><td data-label="Área">Proteção social</td><td data-label="Perguntas que responde quando acionada">Quem perde renda, onde mora e quantas pessoas são? O Cadastro Único já alcança essas famílias e, se não, quanto tempo leva para cadastrá-las? Que benefício já existe para esse caso (Bolsa Família, BPC, Regra de Proteção, Gás do Povo, Tarifa Social, Pé-de-Meia, Acredita)? Quanto custa, por quanto tempo, e cabe no arcabouço fiscal? Como a família sai, sem cair na armadilha em que ganhar mais faz perder tudo? O CRAS e a rede de serviços têm equipe para acompanhar essas famílias? Como vamos medir se funcionou, e quem avalia de forma independente? Que direitos o cidadão tem para se defender se o sistema errar? As oito perguntas estão detalhadas na página de Proteção social</td></tr>
+</tbody>
+</table></div>
+<h2 id="gatilhos-exemplo-completo-terras-raras">Exemplo completo: terras raras</h2>
+<p>A proposta IND-04 do plano industrial quer refinar níquel, lítio, grafite e terras raras no Brasil, em vez de exportar só o minério, e fabricar baterias e ímãs. Pelo mapa, a mudança aciona Educação, Infraestrutura, Desenvolvimento regional, Tributação, Meio ambiente e Política externa. A resposta da Educação, já escrita, mostra o formato:</p>
+<div class="table-wrap"><table class="cards two">
+<thead>
+<tr>
+<th>Pergunta</th>
+<th>Resposta da Educação</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="Pergunta">Quem faz isso?</td><td data-label="Resposta da Educação">Técnicos em mineração, metalurgia, química e operação de planta. Engenheiros de minas, metalúrgicos, químicos e de materiais, e geólogos. Pesquisadores em separação de terras raras e fabricação de ímãs. Operadores da mineração atual requalificados para o refino</td></tr>
+<tr><td data-label="Pergunta">Quantos e até quando?</td><td data-label="Resposta da Educação">Depende do número e do porte das plantas, que a Indústria ainda precisa fixar. Doutores começam a ser formados antes das plantas, porque a pesquisa leva mais tempo</td></tr>
+<tr><td data-label="Pergunta">O que já existe?</td><td data-label="Resposta da Educação">Escolas de minas e cursos de metalurgia em universidades federais, técnico em mineração nos institutos federais, o Cetem (centro de tecnologia mineral do governo federal) e o laboratório de ímãs de terras raras do Senai em Minas Gerais</td></tr>
+<tr><td data-label="Pergunta">O que ensinar?</td><td data-label="Resposta da Educação">Química de separação e refino, segurança e meio ambiente na mineração, materiais magnéticos, levados da pós-graduação para o técnico e a graduação</td></tr>
+<tr><td data-label="Pergunta">Como formar?</td><td data-label="Resposta da Educação">Ensino dual nas plantas, centro tecnológico da missão (já previsto no IND-04), bolsas da Capes em refino e intercâmbio com países que já refinam</td></tr>
+<tr><td data-label="Pergunta">Quem responde?</td><td data-label="Resposta da Educação">Institutos federais e Senai perto das jazidas; universidades federais, Capes e CNPq; empresas da missão no estágio e no ensino dual</td></tr>
+<tr><td data-label="Pergunta">O que muda no plano?</td><td data-label="Resposta da Educação">Uma linha nova na tabela de profissões da página de Educação (minerais críticos) e um catálogo de cursos do polo. A meta numérica espera o número de plantas</td></tr>
+</tbody>
+</table></div>
+<p>O que falta nesse exemplo é a resposta das outras cinco áreas, que ainda não têm página. Quando forem escritas, começam por aqui.</p>
+<h2 id="gatilhos-gatilhos-que-ja-deveriam-ter-disparado">Gatilhos que já deveriam ter disparado</h2>
+<p>Aplicando a regra ao plano como está hoje, estas ligações ainda estão abertas:</p>
+<ul>
+<li><strong>Oito missões industriais → Educação.</strong> A página de Educação trata a indústria como um bloco ("engenharia"). Cada missão precisa da sua linha de profissões. A Educação vai responder missão por missão.</li>
+<li><strong>Saúde → Educação.</strong> Técnicos de enfermagem, radiologia e manutenção de equipamentos, e médicos para o interior. Parcialmente coberto pela seção de ensino superior e por EDU-10.</li>
+<li><strong>Quem é o brasileiro → todas as áreas.</strong> Menos jovens e mais idosos. Coberto na Educação (EDU-08, EDU-09, EDU-11) e na Saúde; as outras áreas respondem quando forem escritas.</li>
+<li><strong>Indústria → Infraestrutura, Tributação, Trabalho.</strong> As missões já estão fixadas, mas essas áreas ainda não têm página. Quando forem escritas, cada uma começa respondendo às oito missões.</li>
+</ul>
+<h2 id="gatilhos-registro-de-mudancas">Registro de mudanças</h2>
+<p>Cada linha é uma mudança que acionou outra área. A data é a da mudança. A coluna "Resposta" resume o que a área acionada decidiu, ou "nada muda".</p>
+<div class="table-wrap"><table class="cards">
+<thead>
+<tr>
+<th>Data</th>
+<th>O que mudou</th>
+<th>Área de origem</th>
+<th>Áreas acionadas</th>
+<th>Resposta</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="Data">nov. 2026</td><td data-label="O que mudou">Página Quem é o brasileiro criada, com projeções até 2070</td><td data-label="Área de origem">Quem é o brasileiro</td><td data-label="Áreas acionadas">Educação, Saúde, Indústria</td><td data-label="Resposta">Educação: EDU-08 e EDU-09 ligadas à queda de alunos. Saúde e Indústria: quadro "O que a demografia muda aqui" em cada página</td></tr>
+<tr><td data-label="Data">nov. 2026</td><td data-label="O que mudou">Seção de ensino superior e EDU-10 (médicos) na Educação</td><td data-label="Área de origem">Educação</td><td data-label="Áreas acionadas">Saúde</td><td data-label="Resposta">Combinado: Educação cuida da qualidade dos cursos de medicina; Saúde cuida de quantos médicos, onde e da residência</td></tr>
+<tr><td data-label="Data">nov. 2026</td><td data-label="O que mudou">EDU-11, cuidado de idosos como profissão</td><td data-label="Área de origem">Educação</td><td data-label="Áreas acionadas">Trabalho, Saúde</td><td data-label="Resposta">Trabalho: política de cuidados, página ainda a escrever. Saúde: pendente</td></tr>
+<tr><td data-label="Data">nov. 2026</td><td data-label="O que mudou">IND-04, refinar minerais críticos</td><td data-label="Área de origem">Indústria</td><td data-label="Áreas acionadas">Educação</td><td data-label="Resposta">Resposta às sete perguntas, acima. Falta a Indústria fixar o número de plantas</td></tr>
+<tr><td data-label="Data">nov. 2026</td><td data-label="O que mudou">Página Proteção social criada, com PS-01 a PS-17 (em revisão)</td><td data-label="Área de origem">Proteção social</td><td data-label="Áreas acionadas">Educação, Saúde, Trabalho, Tributação, Quem é o brasileiro, Desenvolvimento regional, Indústria</td><td data-label="Resposta">Doze gatilhos de origem e oito recebidos entraram no mapa acima; a linha Trabalho e proteção social das perguntas fixas virou duas. Respostas das áreas: pendentes</td></tr>
+</tbody>
+</table></div></article>
+<nav class="pager"><a href="#saude" class="prev"><small>Anterior</small>Saúde</a><a href="#palavras" class="next"><small>Próxima</small>Palavras do plano</a></nav>
 </section>
 <section class="view page" id="v-palavras" data-view="palavras" hidden>
 <header class="page-head"><p class="eyebrow">Glossário</p><h1>Palavras do plano</h1></header>
-<details class="toc"><summary>Nesta página <span>5 seções</span></summary><ol><li><a href="#palavras" data-target="palavras-economia-e-industria">Economia e indústria</a></li><li><a href="#palavras" data-target="palavras-saude">Saúde</a></li><li><a href="#palavras" data-target="palavras-educacao-e-ciencia">Educação e ciência</a></li><li><a href="#palavras" data-target="palavras-populacao">População</a></li><li><a href="#palavras" data-target="palavras-governo-e-controle">Governo e controle</a></li></ol></details>
+<details class="toc"><summary>Nesta página <span>6 seções</span></summary><ol><li><a href="#palavras" data-target="palavras-economia-e-industria">Economia e indústria</a></li><li><a href="#palavras" data-target="palavras-saude">Saúde</a></li><li><a href="#palavras" data-target="palavras-educacao-e-ciencia">Educação e ciência</a></li><li><a href="#palavras" data-target="palavras-populacao">População</a></li><li><a href="#palavras" data-target="palavras-protecao-social">Proteção social</a></li><li><a href="#palavras" data-target="palavras-governo-e-controle">Governo e controle</a></li></ol></details>
 <article class="prose"><p class="lede">O Brasil que Faz foi escrito para ser entendido por qualquer pessoa, mas alguns termos técnicos e siglas são inevitáveis. Esta página explica cada um em uma ou duas frases, no sentido em que o plano os usa. Os termos estão em ordem alfabética dentro de cada grupo.</p>
 <h2 id="palavras-economia-e-industria">Economia e indústria</h2>
 <div class="table-wrap"><table class="cards two">
@@ -1663,6 +1967,26 @@ footer b{color:var(--ink)}
 <tr><td data-label="Termo">Latinobarómetro</td><td data-label="O que significa aqui">Pesquisa anual de opinião feita desde 1995 em 18 países da América Latina, com perguntas sobre confiança e democracia.</td></tr>
 </tbody>
 </table></div>
+<h2 id="palavras-protecao-social">Proteção social</h2>
+<div class="table-wrap"><table class="cards two">
+<thead>
+<tr>
+<th>Termo</th>
+<th>O que significa aqui</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-label="Termo">BPC (Benefício de Prestação Continuada)</td><td data-label="O que significa aqui">Um salário mínimo por mês para idosos com 65 anos ou mais e pessoas com deficiência de família pobre, sem exigir contribuição ao INSS.</td></tr>
+<tr><td data-label="Termo">Cadastro Único</td><td data-label="O que significa aqui">A base de dados do governo federal com as famílias de baixa renda; é a porta de entrada de dezenas de programas.</td></tr>
+<tr><td data-label="Termo">Condicionalidades</td><td data-label="O que significa aqui">Compromissos de saúde e educação que as famílias do Bolsa Família assumem, como frequência escolar e vacinação.</td></tr>
+<tr><td data-label="Termo">CRAS</td><td data-label="O que significa aqui">Centro de assistência social no bairro, que atende e acompanha famílias.</td></tr>
+<tr><td data-label="Termo">CREAS</td><td data-label="O que significa aqui">Centro que atende pessoas com direitos violados (violência, abandono, trabalho infantil).</td></tr>
+<tr><td data-label="Termo">Inclusão produtiva</td><td data-label="O que significa aqui">Ações para que a família passe a gerar renda própria, com crédito, capacitação e emprego.</td></tr>
+<tr><td data-label="Termo">INPC</td><td data-label="O que significa aqui">Índice de inflação medido pelo IBGE para famílias de renda mais baixa. Corrige o salário mínimo e os benefícios.</td></tr>
+<tr><td data-label="Termo">Regra de Proteção</td><td data-label="O que significa aqui">Regra do Bolsa Família que mantém metade do benefício por um tempo quando a renda da família sobe.</td></tr>
+<tr><td data-label="Termo">SUAS (Sistema Único de Assistência Social)</td><td data-label="O que significa aqui">A rede pública de assistência social, organizada como o SUS, com CRAS e CREAS.</td></tr>
+</tbody>
+</table></div>
 <h2 id="palavras-governo-e-controle">Governo e controle</h2>
 <div class="table-wrap"><table class="cards two">
 <thead>
@@ -1679,10 +2003,71 @@ footer b{color:var(--ink)}
 <tr><td data-label="Termo">TCU</td><td data-label="O que significa aqui">Tribunal de Contas da União, que fiscaliza o uso do dinheiro federal. Várias críticas citadas no plano vêm de auditorias dele.</td></tr>
 </tbody>
 </table></div></article>
-<nav class="pager"><a href="#saude" class="prev"><small>Anterior</small>Saúde</a><a href="#inicio" class="next"><small>Próxima</small>Início</a></nav>
+<nav class="pager"><a href="#gatilhos" class="prev"><small>Anterior</small>Gatilhos entre as áreas</a><a href="#inicio" class="next"><small>Próxima</small>Início</a></nav>
 </section>
 
 </main>
+
+<button class="voz-fab" id="voz-fab" type="button" aria-haspopup="dialog"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11h-2Z"/></svg><span>Comentar por áudio</span></button>
+<div class="voz" id="voz" role="dialog" aria-modal="true" aria-labelledby="voz-t" hidden>
+  <div class="voz-in">
+    <h2 id="voz-t">Deixe seu comentário em áudio</h2>
+    <p class="voz-sub">Fale o que achou, o que falta ou o que mudaria. Até 3 minutos. Vamos saber em qual página você estava.</p>
+    <div class="voz-rec">
+      <button type="button" class="voz-btn" id="voz-btn" aria-label="Começar a gravar"><span class="dot"></span></button>
+      <div><p class="voz-time" id="voz-time">0:00</p><p class="voz-state" id="voz-state">Toque para gravar</p></div>
+    </div>
+    <audio id="voz-play" controls hidden></audio>
+    <label class="voz-lab" for="voz-who">Nome ou contato (opcional)</label>
+    <input id="voz-who" type="text" autocomplete="name" placeholder="Se quiser que a gente responda">
+    <p class="voz-note">O áudio é guardado pela equipe do Brasil que Faz para melhorar o plano e pode ser transcrito. Não fale dados pessoais de outras pessoas.</p>
+    <div class="voz-actions"><button type="button" class="voz-cancel" id="voz-cancel">Fechar</button><button type="button" class="voz-send" id="voz-send" disabled>Enviar áudio</button></div>
+    <p class="voz-msg" id="voz-msg" role="status"></p>
+  </div>
+</div>
+<script>
+(function(){
+  var URL_ENVIO='';
+  var fab=document.getElementById('voz-fab'),box=document.getElementById('voz'),btn=document.getElementById('voz-btn'),
+      tm=document.getElementById('voz-time'),st=document.getElementById('voz-state'),play=document.getElementById('voz-play'),
+      send=document.getElementById('voz-send'),msg=document.getElementById('voz-msg'),who=document.getElementById('voz-who');
+  var rec=null,chunks=[],blob=null,t0=0,tick=null,stream=null,MAX=180;
+  if(!navigator.mediaDevices||!window.MediaRecorder){fab.hidden=true;[].forEach.call(document.querySelectorAll('[data-voz]'),function(b){b.hidden=true});return}
+  function fmt(s){return Math.floor(s/60)+':'+('0'+Math.floor(s%60)).slice(-2)}
+  function reset(){blob=null;chunks=[];play.hidden=true;play.removeAttribute('src');send.disabled=true;tm.textContent='0:00';st.textContent='Toque para gravar';btn.classList.remove('on');msg.textContent=''}
+  function stop(){if(rec&&rec.state!=='inactive')rec.stop();clearInterval(tick);if(stream){stream.getTracks().forEach(function(t){t.stop()});stream=null}}
+  function abrir(){reset();box.hidden=false;btn.focus()}
+  fab.addEventListener('click',abrir);
+  [].forEach.call(document.querySelectorAll('[data-voz]'),function(b){b.addEventListener('click',abrir)});
+  document.getElementById('voz-cancel').addEventListener('click',function(){stop();box.hidden=true});
+  box.addEventListener('click',function(e){if(e.target===box){stop();box.hidden=true}});
+  btn.addEventListener('click',function(){
+    if(rec&&rec.state==='recording'){stop();return}
+    reset();
+    navigator.mediaDevices.getUserMedia({audio:true}).then(function(s){
+      stream=s;rec=new MediaRecorder(s);chunks=[];
+      rec.ondataavailable=function(e){if(e.data.size)chunks.push(e.data)};
+      rec.onstop=function(){blob=new Blob(chunks,{type:rec.mimeType||'audio/webm'});play.src=URL.createObjectURL(blob);play.hidden=false;send.disabled=false;btn.classList.remove('on');st.textContent='Ouça antes de enviar, ou grave de novo'};
+      rec.start();t0=Date.now();btn.classList.add('on');st.textContent='Gravando… toque para parar';
+      tick=setInterval(function(){var s=(Date.now()-t0)/1000;tm.textContent=fmt(s);if(s>=MAX)stop()},250);
+    }).catch(function(){st.textContent='Não conseguimos usar o microfone. Verifique a permissão do navegador.'});
+  });
+  send.addEventListener('click',function(){
+    if(!blob)return;
+    if(!URL_ENVIO||URL_ENVIO.indexOf('@@')===0){msg.textContent='Obrigado! O envio de áudios entra no ar em breve. Por enquanto este áudio não foi salvo.';return}
+    send.disabled=true;msg.textContent='Enviando…';
+    var r=new FileReader();
+    r.onload=function(){
+      var h=(location.hash||'#inicio').slice(1)||'inicio';
+      var body=JSON.stringify({audio:String(r.result).split(',')[1],mime:blob.type,page:h,title:document.title,dur:Math.round((Date.now()-t0)/1000),who:who.value.slice(0,120),ua:navigator.userAgent.slice(0,160)});
+      fetch(URL_ENVIO,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:body})
+        .then(function(){msg.textContent='Recebido. Obrigado pelo comentário!';blob=null;setTimeout(function(){box.hidden=true},1800)})
+        .catch(function(){msg.textContent='Não foi possível enviar. Tente de novo em instantes.';send.disabled=false});
+    };
+    r.readAsDataURL(blob);
+  });
+})();
+</script>
 
 <footer><b>Brasil que Faz</b> · programa em elaboração. Novas áreas são publicadas aqui à medida que ficam prontas.</footer>
 
