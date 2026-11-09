@@ -49,6 +49,7 @@ a{color:var(--brand)}
   padding-left:var(--gutter);padding-right:var(--gutter-r);padding-block:0;height:56px}
 .logo{font-family:var(--display);font-stretch:125%;font-weight:800;font-size:17px;letter-spacing:.01em;color:inherit;text-decoration:none;display:flex;align-items:center;gap:8px}
 .logo i{display:inline-block;width:12px;height:12px;background:var(--accent);transform:rotate(45deg)}
+.bar-act{display:flex;gap:6px;align-items:center;flex-shrink:0}.logo{white-space:nowrap}@media (max-width:420px){.bar-act .menu-btn{padding:6px 11px;font-size:14px;min-height:38px}}@media (max-width:360px){.logo{font-size:12.5px;gap:6px}.logo i{width:9px;height:9px}.bar-in{gap:8px}.bar-act{gap:4px}.bar-act .menu-btn{padding:5px 8px;font-size:13px;min-height:36px}}.bar-link{text-decoration:none;display:inline-flex;align-items:center}.bar-link[aria-current]{background:var(--brand-ink);color:var(--brand)}
 .menu-btn{font-family:var(--ui);font-weight:600;font-size:15px;color:var(--brand-ink);background:transparent;border:1.5px solid currentColor;border-radius:999px;padding:7px 16px;min-height:40px;cursor:pointer}
 .sheet{position:fixed;inset:0;z-index:40;background:color-mix(in srgb,var(--ink) 45%,transparent);display:flex;align-items:flex-end}
 .sheet-in{width:100%;background:var(--surface);border-radius:20px 20px 0 0;padding-block:20px calc(20px + env(safe-area-inset-bottom,0px));padding-left:var(--gutter);padding-right:var(--gutter-r);max-height:85vh;overflow:auto}
@@ -360,7 +361,8 @@ footer{padding-bottom:84px}
 <body>
 <header class="bar"><div class="bar-in">
   <a class="logo" href="#inicio"><i aria-hidden="true"></i>Brasil que Faz</a>
-  <button class="menu-btn" id="menu-btn" type="button" aria-haspopup="dialog" aria-controls="sheet">Áreas</button>
+  <div class="bar-act"><a class="menu-btn bar-link" href="#comentarios">Comentários</a>
+  <button class="menu-btn" id="menu-btn" type="button" aria-haspopup="dialog" aria-controls="sheet">Áreas</button></div>
 </div></header>
 
 <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Áreas do programa" hidden>
@@ -375,7 +377,6 @@ footer{padding-bottom:84px}
       <li><a href="#saude">Saúde</a></li>
       <li><a href="#gatilhos">Gatilhos entre as áreas</a></li>
       <li><a href="#palavras">Palavras do plano</a></li>
-      <li><a href="#feedbacks">Feedbacks</a></li>
     </ul>
     <button class="close" id="sheet-close" type="button">Fechar</button>
   </div>
@@ -2018,8 +2019,8 @@ footer{padding-bottom:84px}
 <nav class="pager"><a href="#gatilhos" class="prev"><small>Anterior</small>Gatilhos entre as áreas</a><a href="#inicio" class="next"><small>Próxima</small>Início</a></nav>
 </section>
 
-<section class="view page" id="v-feedbacks" data-view="feedbacks" hidden>
-<header class="page-head"><p class="eyebrow">O que as pessoas disseram</p><h1>Feedbacks</h1></header>
+<section class="view page" id="v-comentarios" data-view="comentarios" hidden>
+<header class="page-head"><p class="eyebrow">O que as pessoas disseram</p><h1>Comentários</h1></header>
 <article class="prose">
 <p>Cada comentário em áudio enviado pelo site vira uma lista curta com os pontos levantados. Aqui aparecem só esses resumos, do mais novo para o mais antigo. Os áudios e as transcrições ficam guardados pela equipe e não são publicados.</p>
 <p><button type="button" class="voz-hero" data-voz><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11h-2Z"/></svg><span><b>Comente por áudio</b><small>Seu comentário entra nesta lista.</small></span></button></p>
@@ -2051,7 +2052,7 @@ footer{padding-bottom:84px}
       })
       .catch(function(){document.getElementById('fb-count').textContent='Não foi possível carregar os comentários agora.'});
   }
-  function check(){if(location.hash==='#feedbacks')load()}
+  function check(){if(location.hash==='#feedbacks'){location.replace('#comentarios');return}if(location.hash==='#comentarios')load()}
   window.addEventListener('hashchange',check);check();
 })();
 </script>
@@ -2071,7 +2072,7 @@ footer{padding-bottom:84px}
       <audio id="voz-play" controls hidden></audio>
       <label class="voz-lab" for="voz-who">Nome ou contato (opcional)</label>
       <input id="voz-who" type="text" autocomplete="name" placeholder="Se quiser que a gente responda">
-      <p class="voz-note">O áudio é guardado pela equipe do Brasil que Faz e transcrito. Só o resumo em pontos aparece na página <a href="#feedbacks">Feedbacks</a>; o áudio e a transcrição não ficam públicos.</p>
+      <p class="voz-note">O áudio é guardado pela equipe do Brasil que Faz e transcrito. Só o resumo em pontos aparece na página <a href="#comentarios">Comentários</a>; o áudio e a transcrição não ficam públicos.</p>
       <div class="voz-actions"><button type="button" class="voz-cancel" id="voz-cancel">Fechar</button><button type="button" class="voz-send" id="voz-send" disabled>Enviar áudio</button></div>
       <p class="voz-msg" id="voz-msg" role="status"></p>
     </div>
@@ -2102,13 +2103,13 @@ footer{padding-bottom:84px}
   function fechar(){stop();box.hidden=true}
   fab.addEventListener('click',abrir);heroes.forEach(function(b){b.addEventListener('click',abrir)});
   $('voz-cancel').addEventListener('click',fechar);
-  box.addEventListener('click',function(e){if(e.target===box||(e.target.closest&&e.target.closest('a[href="#feedbacks"]')))fechar()});
+  box.addEventListener('click',function(e){if(e.target===box||(e.target.closest&&e.target.closest('a[href="#comentarios"]')))fechar()});
   $('voz-again').addEventListener('click',function(){reset();btn.focus()});
   window.addEventListener('hashchange',function(){if(!box.hidden)fechar()});
   $('voz-ok').addEventListener('click',function(){
     var ok=$('voz-ok');if(ok.dataset.done){fechar();return}
     if(lastId)fetch(API+'/functions/v1/processar-audio',{method:'POST',headers:{apikey:KEY,'Content-Type':'application/json'},body:JSON.stringify({id:lastId,acao:'confirmar'})}).catch(function(){});
-    $('voz-res-t').textContent='Obrigado! Seu comentário foi registrado.';$('voz-res-sub').textContent='Ele aparece na página Feedbacks. Se quiser, grave outro áudio.';
+    $('voz-res-t').textContent='Obrigado! Seu comentário foi registrado.';$('voz-res-sub').textContent='Ele aparece na página Comentários. Se quiser, grave outro áudio.';
     ok.dataset.done='1';ok.textContent='Fechar';
   });
   btn.addEventListener('click',function(){
@@ -2148,9 +2149,9 @@ footer{padding-bottom:84px}
           .then(function(r2){clearTimeout(to);return r2.json().catch(function(){return{}})})
           .then(function(j){
             if(j&&j.pontos){mostrar(j.pontos,j.pontos.length?null:'Não identificamos pontos sobre o plano neste áudio. Quer gravar de novo?')}
-            else mostrar([],'Seu áudio foi salvo. O resumo fica pronto em breve e aparece na página Feedbacks.');
+            else mostrar([],'Seu áudio foi salvo. O resumo fica pronto em breve e aparece na página Comentários.');
           })
-          .catch(function(){mostrar([],'Seu áudio foi salvo. O resumo fica pronto em breve e aparece na página Feedbacks.')});
+          .catch(function(){mostrar([],'Seu áudio foi salvo. O resumo fica pronto em breve e aparece na página Comentários.')});
       })
       .catch(function(){msg.textContent='Não foi possível enviar. Tente de novo em instantes.';send.disabled=false});
   });
@@ -2168,7 +2169,7 @@ footer{padding-bottom:84px}
     var h=(location.hash||'').slice(1);
     var name=names.indexOf(h)>=0?h:'inicio';
     views.forEach(function(v){v.hidden=v.dataset.view!==name});
-    [].forEach.call(sheet.querySelectorAll('a'),function(a){
+    [].forEach.call(document.querySelectorAll('.sheet a, .bar-link'),function(a){
       if(a.getAttribute('href')==='#'+name)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
     });
     var t=document.querySelector('#v-'+name+' h1');
