@@ -343,6 +343,17 @@ footer b{color:var(--ink)}
 .voz-send:disabled{opacity:.45;cursor:default}
 .voz-msg{font-family:var(--ui);font-size:14px;margin:10px 0 0;min-height:1em}
 footer{padding-bottom:84px}
+.voz-spin{width:40px;height:40px;border-radius:50%;border:4px solid var(--line);border-top-color:var(--accent);animation:vozs 1s linear infinite;margin:6px 0 14px}
+@keyframes vozs{to{transform:rotate(360deg)}}
+.voz-pts{list-style:none;margin:6px 0 14px;padding:0;display:grid;gap:8px}
+.voz-pts li{position:relative;padding:10px 12px 10px 34px;background:var(--bg);border-radius:10px;font-family:var(--ui);font-size:15px;line-height:1.4}
+.voz-pts li::before{content:"";position:absolute;left:13px;top:16px;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.fb-count{font-family:var(--ui);color:var(--muted);font-size:14px}
+.prose .fb-list{list-style:none;margin:8px 0 20px;padding:0;display:grid;gap:4px}
+.prose .fb-list>li{margin:0;padding:12px 0;border-bottom:1px solid var(--line)}
+.fb-meta{font-family:var(--ui);font-size:12.5px;font-weight:600;color:var(--muted);margin:0 0 4px!important;text-transform:uppercase;letter-spacing:.04em}
+.prose .fb-list ul{margin:0;padding-left:18px}
+.prose .fb-list ul li{margin:0 0 2px;font-size:15.5px}
 </style>
 
 </head>
@@ -364,6 +375,7 @@ footer{padding-bottom:84px}
       <li><a href="#saude">Saúde</a></li>
       <li><a href="#gatilhos">Gatilhos entre as áreas</a></li>
       <li><a href="#palavras">Palavras do plano</a></li>
+      <li><a href="#feedbacks">Feedbacks</a></li>
     </ul>
     <button class="close" id="sheet-close" type="button">Fechar</button>
   </div>
@@ -2006,41 +2018,99 @@ footer{padding-bottom:84px}
 <nav class="pager"><a href="#gatilhos" class="prev"><small>Anterior</small>Gatilhos entre as áreas</a><a href="#inicio" class="next"><small>Próxima</small>Início</a></nav>
 </section>
 
+<section class="view page" id="v-feedbacks" data-view="feedbacks" hidden>
+<header class="page-head"><p class="eyebrow">O que as pessoas disseram</p><h1>Feedbacks</h1></header>
+<article class="prose">
+<p>Cada comentário em áudio enviado pelo site vira uma lista curta com os pontos levantados. Aqui aparecem só esses resumos, do mais novo para o mais antigo. Os áudios e as transcrições ficam guardados pela equipe e não são publicados.</p>
+<p><button type="button" class="voz-hero" data-voz><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11h-2Z"/></svg><span><b>Comente por áudio</b><small>Seu comentário entra nesta lista.</small></span></button></p>
+<p class="fb-count" id="fb-count">Carregando…</p>
+<ol class="fb-list" id="fb-list"></ol>
+</article>
+</section>
+<script>
+(function(){
+  var API='https://nqjbxbrsphvlmrfpbnlj.supabase.co',KEY='sb_publishable_a5Vmufes7ZeE8JMnqW8qaw_r7o4RbRX',done=false;
+  var titles={};
+  function load(){
+    if(done&&Date.now()-done<30000)return;done=Date.now();
+    fetch(API+'/rest/v1/rpc/feedback_resumos',{method:'POST',headers:{apikey:KEY,'Content-Type':'application/json'},body:'{"lim":300}'})
+      .then(function(r){if(!r.ok)throw r;return r.json()})
+      .then(function(rows){
+        var ol=document.getElementById('fb-list');ol.innerHTML='';
+        document.getElementById('fb-count').textContent=rows.length?rows.length+(rows.length===1?' comentário':' comentários'):'Ainda não há comentários. Seja a primeira pessoa a comentar.';
+        rows.forEach(function(r){
+          var li=document.createElement('li');
+          var meta=document.createElement('p');meta.className='fb-meta';
+          var d=new Date(r.created_at);
+          meta.textContent=d.toLocaleDateString('pt-BR',{day:'numeric',month:'short'})+' · '+((r.page_title||'').split(' · ')[0]||'Início');
+          li.appendChild(meta);
+          var ul=document.createElement('ul');
+          (r.points||[]).forEach(function(p){var x=document.createElement('li');x.textContent=p;ul.appendChild(x)});
+          li.appendChild(ul);ol.appendChild(li);
+        });
+      })
+      .catch(function(){document.getElementById('fb-count').textContent='Não foi possível carregar os comentários agora.'});
+  }
+  function check(){if(location.hash==='#feedbacks')load()}
+  window.addEventListener('hashchange',check);check();
+})();
+</script>
+
 </main>
 
 <button class="voz-fab" id="voz-fab" type="button" aria-haspopup="dialog"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11h-2Z"/></svg><span>Comentar por áudio</span></button>
 <div class="voz" id="voz" role="dialog" aria-modal="true" aria-labelledby="voz-t" hidden>
   <div class="voz-in">
-    <h2 id="voz-t">Deixe seu comentário em áudio</h2>
-    <p class="voz-sub">Fale o que achou, o que falta ou o que mudaria. Até 3 minutos. Vamos saber em qual página você estava.</p>
-    <div class="voz-rec">
-      <button type="button" class="voz-btn" id="voz-btn" aria-label="Começar a gravar"><span class="dot"></span></button>
-      <div><p class="voz-time" id="voz-time">0:00</p><p class="voz-state" id="voz-state">Toque para gravar</p></div>
+    <div id="voz-p1">
+      <h2 id="voz-t">Deixe seu comentário em áudio</h2>
+      <p class="voz-sub">Fale o que achou, o que falta ou o que mudaria. Até 2 minutos. Depois mostramos os pontos que você levantou.</p>
+      <div class="voz-rec">
+        <button type="button" class="voz-btn" id="voz-btn" aria-label="Começar a gravar"><span class="dot"></span></button>
+        <div><p class="voz-time" id="voz-time">0:00</p><p class="voz-state" id="voz-state">Toque para gravar</p></div>
+      </div>
+      <audio id="voz-play" controls hidden></audio>
+      <label class="voz-lab" for="voz-who">Nome ou contato (opcional)</label>
+      <input id="voz-who" type="text" autocomplete="name" placeholder="Se quiser que a gente responda">
+      <p class="voz-note">O áudio é guardado pela equipe do Brasil que Faz e transcrito. Só o resumo em pontos aparece na página <a href="#feedbacks">Feedbacks</a>; o áudio e a transcrição não ficam públicos.</p>
+      <div class="voz-actions"><button type="button" class="voz-cancel" id="voz-cancel">Fechar</button><button type="button" class="voz-send" id="voz-send" disabled>Enviar áudio</button></div>
+      <p class="voz-msg" id="voz-msg" role="status"></p>
     </div>
-    <audio id="voz-play" controls hidden></audio>
-    <label class="voz-lab" for="voz-who">Nome ou contato (opcional)</label>
-    <input id="voz-who" type="text" autocomplete="name" placeholder="Se quiser que a gente responda">
-    <p class="voz-note">O áudio é guardado pela equipe do Brasil que Faz para melhorar o plano e pode ser transcrito. Não fale dados pessoais de outras pessoas.</p>
-    <div class="voz-actions"><button type="button" class="voz-cancel" id="voz-cancel">Fechar</button><button type="button" class="voz-send" id="voz-send" disabled>Enviar áudio</button></div>
-    <p class="voz-msg" id="voz-msg" role="status"></p>
+    <div id="voz-p2" hidden>
+      <div id="voz-wait"><div class="voz-spin" aria-hidden="true"></div><h2>Processando seu comentário…</h2><p class="voz-sub" id="voz-wait-t">Ouvindo o áudio e separando os pontos. Leva alguns segundos.</p></div>
+      <div id="voz-res" hidden>
+        <h2 id="voz-res-t">Seu comentário levantou estes pontos</h2>
+        <ul class="voz-pts" id="voz-pts"></ul>
+        <p class="voz-sub" id="voz-res-sub">Está certo? Você pode confirmar ou gravar outro áudio para completar.</p>
+        <div class="voz-actions"><button type="button" class="voz-cancel" id="voz-again">Gravar outro áudio</button><button type="button" class="voz-send" id="voz-ok">Confirmar</button></div>
+      </div>
+    </div>
   </div>
 </div>
 <script>
 (function(){
-  var URL_ENVIO='https://nqjbxbrsphvlmrfpbnlj.supabase.co';
-  var fab=document.getElementById('voz-fab'),box=document.getElementById('voz'),btn=document.getElementById('voz-btn'),
-      tm=document.getElementById('voz-time'),st=document.getElementById('voz-state'),play=document.getElementById('voz-play'),
-      send=document.getElementById('voz-send'),msg=document.getElementById('voz-msg'),who=document.getElementById('voz-who');
-  var rec=null,chunks=[],blob=null,t0=0,recEnd=0,tick=null,stream=null,MAX=180;
-  if(!navigator.mediaDevices||!window.MediaRecorder){fab.hidden=true;[].forEach.call(document.querySelectorAll('[data-voz]'),function(b){b.hidden=true});return}
+  var API='https://nqjbxbrsphvlmrfpbnlj.supabase.co',KEY='sb_publishable_a5Vmufes7ZeE8JMnqW8qaw_r7o4RbRX';
+  function $(i){return document.getElementById(i)}
+  var fab=$('voz-fab'),box=$('voz'),btn=$('voz-btn'),tm=$('voz-time'),st=$('voz-state'),play=$('voz-play'),send=$('voz-send'),msg=$('voz-msg'),who=$('voz-who'),
+      p1=$('voz-p1'),p2=$('voz-p2'),wait=$('voz-wait'),res=$('voz-res'),pts=$('voz-pts');
+  var rec=null,chunks=[],blob=null,t0=0,recEnd=0,tick=null,stream=null,MAX=120,lastId=null;
+  var heroes=[].slice.call(document.querySelectorAll('[data-voz]'));
+  if(!navigator.mediaDevices||!window.MediaRecorder){fab.hidden=true;heroes.forEach(function(b){b.hidden=true});return}
   function fmt(s){return Math.floor(s/60)+':'+('0'+Math.floor(s%60)).slice(-2)}
-  function reset(){blob=null;chunks=[];play.hidden=true;play.removeAttribute('src');send.disabled=true;tm.textContent='0:00';st.textContent='Toque para gravar';btn.classList.remove('on');msg.textContent=''}
+  function reset(){blob=null;chunks=[];play.hidden=true;play.removeAttribute('src');send.disabled=true;tm.textContent='0:00';st.textContent='Toque para gravar';btn.classList.remove('on');msg.textContent='';p1.hidden=false;p2.hidden=true}
   function stop(){if(rec&&rec.state!=='inactive')rec.stop();clearInterval(tick);if(stream){stream.getTracks().forEach(function(t){t.stop()});stream=null}}
   function abrir(){reset();box.hidden=false;btn.focus()}
-  fab.addEventListener('click',abrir);
-  [].forEach.call(document.querySelectorAll('[data-voz]'),function(b){b.addEventListener('click',abrir)});
-  document.getElementById('voz-cancel').addEventListener('click',function(){stop();box.hidden=true});
-  box.addEventListener('click',function(e){if(e.target===box){stop();box.hidden=true}});
+  function fechar(){stop();box.hidden=true}
+  fab.addEventListener('click',abrir);heroes.forEach(function(b){b.addEventListener('click',abrir)});
+  $('voz-cancel').addEventListener('click',fechar);
+  box.addEventListener('click',function(e){if(e.target===box||(e.target.closest&&e.target.closest('a[href="#feedbacks"]')))fechar()});
+  $('voz-again').addEventListener('click',function(){reset();btn.focus()});
+  window.addEventListener('hashchange',function(){if(!box.hidden)fechar()});
+  $('voz-ok').addEventListener('click',function(){
+    var ok=$('voz-ok');if(ok.dataset.done){fechar();return}
+    if(lastId)fetch(API+'/functions/v1/processar-audio',{method:'POST',headers:{apikey:KEY,'Content-Type':'application/json'},body:JSON.stringify({id:lastId,acao:'confirmar'})}).catch(function(){});
+    $('voz-res-t').textContent='Obrigado! Seu comentário foi registrado.';$('voz-res-sub').textContent='Ele aparece na página Feedbacks. Se quiser, grave outro áudio.';
+    ok.dataset.done='1';ok.textContent='Fechar';
+  });
   btn.addEventListener('click',function(){
     if(rec&&rec.state==='recording'){stop();return}
     reset();
@@ -2052,19 +2122,36 @@ footer{padding-bottom:84px}
       tick=setInterval(function(){var s=(Date.now()-t0)/1000;tm.textContent=fmt(s);if(s>=MAX)stop()},250);
     }).catch(function(){st.textContent='Não conseguimos usar o microfone. Verifique a permissão do navegador.'});
   });
+  function mostrar(lista,aviso){
+    wait.hidden=true;res.hidden=false;$('voz-ok').hidden=false;delete $('voz-ok').dataset.done;$('voz-ok').textContent='Confirmar';pts.innerHTML='';
+    $('voz-res-t').textContent=lista.length?'Seu comentário levantou estes pontos':'Recebemos seu áudio';
+    lista.forEach(function(p){var li=document.createElement('li');li.textContent=p;pts.appendChild(li)});
+    $('voz-res-sub').textContent=aviso||'Está certo? Você pode confirmar ou gravar outro áudio para completar.';
+    if(!lista.length){$('voz-ok').dataset.done='1';$('voz-ok').textContent='Fechar'}
+  }
   send.addEventListener('click',function(){
     if(!blob)return;
-    if(!URL_ENVIO||URL_ENVIO.indexOf('@@')===0){msg.textContent='Obrigado! O envio de áudios entra no ar em breve. Por enquanto este áudio não foi salvo.';return}
     send.disabled=true;msg.textContent='Enviando…';
-    var KEY='sb_publishable_a5Vmufes7ZeE8JMnqW8qaw_r7o4RbRX',h=(location.hash||'#inicio').slice(1)||'inicio',mime=(blob.type||'audio/webm').split(';')[0];
+    var h=(location.hash||'#inicio').slice(1)||'inicio',mime=(blob.type||'audio/webm').split(';')[0];
     var ext=mime.indexOf('mp4')>=0?'m4a':mime.indexOf('ogg')>=0?'ogg':'webm';
-    var d=new Date(),dia=d.toISOString().slice(0,10),id=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():String(Date.now())+Math.random().toString(36).slice(2);
-    var path='audios/'+dia+'/'+h.replace(/[^a-z0-9-]/gi,'').slice(0,40)+'-'+id+'.'+ext;
+    var id=crypto.randomUUID?crypto.randomUUID():'10000000-1000-4000-8000-100000000000'.replace(/[018]/g,function(c){return(c^crypto.getRandomValues(new Uint8Array(1))[0]&15>>c/4).toString(16)});
+    var path='audios/'+new Date().toISOString().slice(0,10)+'/'+h.replace(/[^a-z0-9-]/gi,'').slice(0,40)+'-'+id+'.'+ext;
     var dur=Math.min(600,Math.round((recEnd-t0)/1000));
-    fetch(URL_ENVIO+'/storage/v1/object/feedback-audio/'+path,{method:'POST',headers:{apikey:KEY,'Content-Type':mime},body:blob})
-      .then(function(r){if(!r.ok)throw r;return fetch(URL_ENVIO+'/rest/v1/feedback_audio',{method:'POST',headers:{apikey:KEY,'Content-Type':'application/json',Prefer:'return=minimal'},
-        body:JSON.stringify({page:h.slice(0,60),page_title:document.title.slice(0,200),duration_s:dur,contact:who.value.slice(0,120)||null,audio_path:path,mime:mime.slice(0,60),user_agent:navigator.userAgent.slice(0,200)})})})
-      .then(function(r){if(!r.ok)throw r;msg.textContent='Recebido. Obrigado pelo comentário!';blob=null;setTimeout(function(){box.hidden=true},1800)})
+    fetch(API+'/storage/v1/object/feedback-audio/'+path,{method:'POST',headers:{apikey:KEY,'Content-Type':mime},body:blob})
+      .then(function(r){if(!r.ok)throw r;return fetch(API+'/rest/v1/feedback_audio',{method:'POST',headers:{apikey:KEY,'Content-Type':'application/json',Prefer:'return=minimal'},
+        body:JSON.stringify({id:id,page:h.slice(0,60),page_title:document.title.slice(0,200),duration_s:dur,contact:who.value.slice(0,120)||null,audio_path:path,mime:mime.slice(0,60),user_agent:navigator.userAgent.slice(0,200)})})})
+      .then(function(r){
+        if(!r.ok)throw r;
+        lastId=id;blob=null;p1.hidden=true;p2.hidden=false;wait.hidden=false;res.hidden=true;
+        var ctl=window.AbortController?new AbortController():null;var to=setTimeout(function(){ctl&&ctl.abort()},90000);
+        return fetch(API+'/functions/v1/processar-audio',{method:'POST',headers:{apikey:KEY,'Content-Type':'application/json'},body:JSON.stringify({id:id}),signal:ctl&&ctl.signal})
+          .then(function(r2){clearTimeout(to);return r2.json().catch(function(){return{}})})
+          .then(function(j){
+            if(j&&j.pontos){mostrar(j.pontos,j.pontos.length?null:'Não identificamos pontos sobre o plano neste áudio. Quer gravar de novo?')}
+            else mostrar([],'Seu áudio foi salvo. O resumo fica pronto em breve e aparece na página Feedbacks.');
+          })
+          .catch(function(){mostrar([],'Seu áudio foi salvo. O resumo fica pronto em breve e aparece na página Feedbacks.')});
+      })
       .catch(function(){msg.textContent='Não foi possível enviar. Tente de novo em instantes.';send.disabled=false});
   });
 })();
