@@ -2027,11 +2027,11 @@ footer{padding-bottom:84px}
 </div>
 <script>
 (function(){
-  var URL_ENVIO='';
+  var URL_ENVIO='https://nqjbxbrsphvlmrfpbnlj.supabase.co';
   var fab=document.getElementById('voz-fab'),box=document.getElementById('voz'),btn=document.getElementById('voz-btn'),
       tm=document.getElementById('voz-time'),st=document.getElementById('voz-state'),play=document.getElementById('voz-play'),
       send=document.getElementById('voz-send'),msg=document.getElementById('voz-msg'),who=document.getElementById('voz-who');
-  var rec=null,chunks=[],blob=null,t0=0,tick=null,stream=null,MAX=180;
+  var rec=null,chunks=[],blob=null,t0=0,recEnd=0,tick=null,stream=null,MAX=180;
   if(!navigator.mediaDevices||!window.MediaRecorder){fab.hidden=true;[].forEach.call(document.querySelectorAll('[data-voz]'),function(b){b.hidden=true});return}
   function fmt(s){return Math.floor(s/60)+':'+('0'+Math.floor(s%60)).slice(-2)}
   function reset(){blob=null;chunks=[];play.hidden=true;play.removeAttribute('src');send.disabled=true;tm.textContent='0:00';st.textContent='Toque para gravar';btn.classList.remove('on');msg.textContent=''}
@@ -2047,7 +2047,7 @@ footer{padding-bottom:84px}
     navigator.mediaDevices.getUserMedia({audio:true}).then(function(s){
       stream=s;rec=new MediaRecorder(s);chunks=[];
       rec.ondataavailable=function(e){if(e.data.size)chunks.push(e.data)};
-      rec.onstop=function(){blob=new Blob(chunks,{type:rec.mimeType||'audio/webm'});play.src=URL.createObjectURL(blob);play.hidden=false;send.disabled=false;btn.classList.remove('on');st.textContent='Ouça antes de enviar, ou grave de novo'};
+      rec.onstop=function(){recEnd=Date.now();blob=new Blob(chunks,{type:rec.mimeType||'audio/webm'});play.src=URL.createObjectURL(blob);play.hidden=false;send.disabled=false;btn.classList.remove('on');st.textContent='Ouça antes de enviar, ou grave de novo'};
       rec.start();t0=Date.now();btn.classList.add('on');st.textContent='Gravando… toque para parar';
       tick=setInterval(function(){var s=(Date.now()-t0)/1000;tm.textContent=fmt(s);if(s>=MAX)stop()},250);
     }).catch(function(){st.textContent='Não conseguimos usar o microfone. Verifique a permissão do navegador.'});
@@ -2056,15 +2056,16 @@ footer{padding-bottom:84px}
     if(!blob)return;
     if(!URL_ENVIO||URL_ENVIO.indexOf('@@')===0){msg.textContent='Obrigado! O envio de áudios entra no ar em breve. Por enquanto este áudio não foi salvo.';return}
     send.disabled=true;msg.textContent='Enviando…';
-    var r=new FileReader();
-    r.onload=function(){
-      var h=(location.hash||'#inicio').slice(1)||'inicio';
-      var body=JSON.stringify({audio:String(r.result).split(',')[1],mime:blob.type,page:h,title:document.title,dur:Math.round((Date.now()-t0)/1000),who:who.value.slice(0,120),ua:navigator.userAgent.slice(0,160)});
-      fetch(URL_ENVIO,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:body})
-        .then(function(){msg.textContent='Recebido. Obrigado pelo comentário!';blob=null;setTimeout(function(){box.hidden=true},1800)})
-        .catch(function(){msg.textContent='Não foi possível enviar. Tente de novo em instantes.';send.disabled=false});
-    };
-    r.readAsDataURL(blob);
+    var KEY='sb_publishable_a5Vmufes7ZeE8JMnqW8qaw_r7o4RbRX',h=(location.hash||'#inicio').slice(1)||'inicio',mime=(blob.type||'audio/webm').split(';')[0];
+    var ext=mime.indexOf('mp4')>=0?'m4a':mime.indexOf('ogg')>=0?'ogg':'webm';
+    var d=new Date(),dia=d.toISOString().slice(0,10),id=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():String(Date.now())+Math.random().toString(36).slice(2);
+    var path='audios/'+dia+'/'+h.replace(/[^a-z0-9-]/gi,'').slice(0,40)+'-'+id+'.'+ext;
+    var dur=Math.min(600,Math.round((recEnd-t0)/1000));
+    fetch(URL_ENVIO+'/storage/v1/object/feedback-audio/'+path,{method:'POST',headers:{apikey:KEY,'Content-Type':mime},body:blob})
+      .then(function(r){if(!r.ok)throw r;return fetch(URL_ENVIO+'/rest/v1/feedback_audio',{method:'POST',headers:{apikey:KEY,'Content-Type':'application/json',Prefer:'return=minimal'},
+        body:JSON.stringify({page:h.slice(0,60),page_title:document.title.slice(0,200),duration_s:dur,contact:who.value.slice(0,120)||null,audio_path:path,mime:mime.slice(0,60),user_agent:navigator.userAgent.slice(0,200)})})})
+      .then(function(r){if(!r.ok)throw r;msg.textContent='Recebido. Obrigado pelo comentário!';blob=null;setTimeout(function(){box.hidden=true},1800)})
+      .catch(function(){msg.textContent='Não foi possível enviar. Tente de novo em instantes.';send.disabled=false});
   });
 })();
 </script>
