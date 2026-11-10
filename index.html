@@ -67,6 +67,7 @@ main{max-width:760px;margin:0 auto;padding-left:var(--gutter);padding-right:var(
 .hero h1{font-family:var(--display);font-stretch:125%;font-weight:900;font-size:clamp(44px,13vw,84px);line-height:.92;letter-spacing:-.01em;margin:0 0 18px;text-wrap:balance}
 .hero h1 span{color:var(--brand)}
 .hero-voz #voz-fab{opacity:0;pointer-events:none;transform:translateY(12px)}
+.ficha .share{margin:10px 0 0;border:1px solid var(--line);background:transparent;color:var(--brand);font:700 14px var(--ui);padding:8px 14px;border-radius:999px;cursor:pointer}
 .carta h1{font-size:clamp(36px,10.5vw,64px);line-height:.98;margin:6px 0 20px}
 .carta>p:not(.eyebrow):not(.assina){font-size:18px;line-height:1.6;margin:0 0 14px;max-width:36em}
 .carta .assina{font-family:var(--ui);font-weight:700;font-size:16px;margin:4px 0 0}
@@ -406,9 +407,10 @@ footer{padding-bottom:84px}
   </div>
 
   <h2 class="section-title">O que é o plano</h2>
-  <p>Um plano para 2027 a 2040, a primeira etapa de uma visão até 2070. Ele começa por quem é o brasileiro e segue área por área, com metas que dá para medir e cobrar. Três regras valem para todas as páginas:</p>
+  <p>Um plano para 2027 a 2040, a primeira etapa de uma visão até 2070. Ele não é uma lista de promessas. Define aonde o Brasil precisa chegar e como medir se chegou, área por área. As propostas que aparecem nas páginas são caminhos possíveis e servem de régua para avaliar o que candidatos e governos propõem.</p>
+  <p>Três regras valem para todas as páginas:</p>
   <ol class="princ">
-    <li><b>População primeiro</b><p>Toda meta por aluno, trabalhador ou habitante usa os números de <a href="#brasileiro">Quem é o brasileiro</a>.</p></li>
+    <li><b>Planejar para o Brasil de 2040, não o de hoje</b><p>As metas são calculadas para a população que o país vai ter. Haverá menos crianças e muito mais idosos: por isso a educação planeja escolas para menos alunos, e a saúde, mais cuidado para idosos. As projeções estão em <a href="#brasileiro">Quem é o brasileiro</a>.</p></li>
     <li><b>Continuidade</b><p>Toda área parte do que já existe. O que funciona é mantido e ampliado, o que falha é corrigido com nome e número, e nada é proposto como novo se já está acontecendo.</p></li>
     <li><b>Medir e cobrar</b><p>Cada proposta tem código, número, quem paga e riscos, e as metas passam por revisões públicas em 2030 e 2035.</p></li>
   </ol>
@@ -2219,6 +2221,7 @@ footer{padding-bottom:84px}
 
 <script>(function(){var h=document.querySelector('.carta .voz-hero'),v=document.getElementById('v-inicio');if(!h)return;function u(){document.documentElement.classList.toggle('hero-voz',!v.hidden&&h.getBoundingClientRect().bottom>0)}addEventListener('scroll',u,{passive:true});addEventListener('hashchange',function(){setTimeout(u,50)});u();setTimeout(u,300)})();</script>
 
+<script>(function(){var B='https://gpmolino27.github.io/brasilquefaz/p/';[].forEach.call(document.querySelectorAll('article.ficha'),function(f){var b=document.createElement('button');b.type='button';b.className='share';b.textContent='Compartilhar';b.addEventListener('click',function(){var u=B+f.id+'/',t=f.querySelector('.code').textContent+' · '+f.querySelector('h3').textContent;if(navigator.share){navigator.share({title:t,url:u}).catch(function(){})}else{try{navigator.clipboard.writeText(u);b.textContent='Link copiado'}catch(e){prompt('Copie o link:',u)}}});f.appendChild(b)})})();</script>
 <section class="view page" id="v-comentarios" data-view="comentarios" hidden>
 <header class="page-head"><p class="eyebrow">O que as pessoas disseram</p><h1>Comentários</h1></header>
 <article class="prose">
@@ -2462,8 +2465,10 @@ footer{padding-bottom:84px}
   var names=views.map(function(v){return v.dataset.view});
   var sheet=document.getElementById('sheet');
   function show(){
-    var h=(location.hash||'').slice(1);
+    var h=(location.hash||'').slice(1),sub=null;
+    if(h.indexOf('/')>0){sub=h.split('/')[1];h=h.split('/')[0]}
     var name=names.indexOf(h)>=0?h:'inicio';
+    if(sub&&!pend){var se=document.getElementById(sub);if(se){pend=se;var dd=se.querySelector('details');if(dd)dd.open=true}}
     views.forEach(function(v){v.hidden=v.dataset.view!==name});
     [].forEach.call(document.querySelectorAll('.sheet a, .bar-link'),function(a){
       if(a.getAttribute('href')==='#'+name)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
