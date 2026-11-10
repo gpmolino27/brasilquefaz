@@ -66,6 +66,14 @@ main{max-width:760px;margin:0 auto;padding-left:var(--gutter);padding-right:var(
 .eyebrow{font-family:var(--ui);font-size:12.5px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:0 0 10px}
 .hero h1{font-family:var(--display);font-stretch:125%;font-weight:900;font-size:clamp(44px,13vw,84px);line-height:.92;letter-spacing:-.01em;margin:0 0 18px;text-wrap:balance}
 .hero h1 span{color:var(--brand)}
+.hero-voz #voz-fab{opacity:0;pointer-events:none;transform:translateY(12px)}
+.carta h1{font-size:clamp(36px,10.5vw,64px);line-height:.98;margin:6px 0 20px}
+.carta>p:not(.eyebrow):not(.assina){font-size:18px;line-height:1.6;margin:0 0 14px;max-width:36em}
+.carta .assina{font-family:var(--ui);font-weight:700;font-size:16px;margin:4px 0 0}
+.sub-title{font-family:var(--ui);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:24px 0 0}
+.soon{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.soon li{font-family:var(--ui);font-size:14px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.area .codes{display:block;font-family:var(--ui);font-size:12.5px;font-weight:700;color:var(--brand);margin-top:3px}
 .hero .sub{font-size:19px;line-height:1.5;margin:0;max-width:34ch}
 
 .meter{margin-block:32px 8px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 16px 14px}
@@ -192,7 +200,7 @@ footer b{color:var(--ink)}
 .prose blockquote p{margin:0}
 .rule .cta{font-weight:700;color:var(--brand);text-decoration:none}
 .rule.start{border-left-color:var(--brand)}
-.rule.origem{margin-top:24px}.rule.origem p{margin:0 0 10px}.rule.origem .assina{font-weight:700;margin:4px 0 0}
+.rule.origem{margin:8px 0 28px}.rule.origem p{margin:0 0 10px}.rule.origem .assina{font-weight:700;margin:4px 0 0}
 .pyramids{margin:20px 0}
 .pyr-key{font-size:13.5px;color:var(--muted);margin:0 0 8px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
 .pyr-key .sw{display:inline-block;width:12px;height:12px;border-radius:3px}.pyr-key .m{background:#2B7BD6}.pyr-key .f{background:#EC6A35;margin-left:8px}
@@ -387,23 +395,27 @@ footer{padding-bottom:84px}
 
 <main>
 <section class="view" id="v-inicio" data-view="inicio">
-  <div class="hero">
-    <p class="eyebrow">Programa de país · 2027 a 2040</p>
-    <h1>Brasil<br>que <span>Faz</span></h1>
-    <p class="sub">Um plano de país para 2027 a 2040, a primeira etapa de uma visão até 2070. Começa por quem é o brasileiro e segue área por área, com metas que dá para medir e cobrar.</p>
-    <button type="button" class="voz-hero" data-voz><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11h-2Z"/></svg><span><b>Comente por áudio</b><small>Diga o que achou do plano. Leva um minuto.</small></span></button>
-  </div>
-  <aside class="rule origem" id="origem">
-    <p class="eyebrow">Por que este plano existe</p>
-    <h2>Uma visão pessoal, escrita em público</h2>
+  <div class="hero carta">
+    <p class="eyebrow">Brasil que Faz · 2027 a 2040</p>
+    <h1>Por que escrevi <span>este plano</span></h1>
     <p>Depois da última eleição para presidente, percebi que discutir política no Brasil virou uma coisa rasa: muita certeza, pouca informação e quase nenhum plano. Quis mudar o jeito como eu mesmo discuto política, e o primeiro passo era formar a minha opinião sobre o que o país deveria fazer.</p>
     <p>Antes isso parecia impossível para uma pessoa só, porque a informação é muita e está espalhada. Hoje passo muitas horas conversando com inteligência artificial sobre esses temas. Resolvi juntar essas conversas em um lugar só, registrando as conclusões a que vou chegando, com números e fontes.</p>
     <p>Este plano é o resultado. Não é de um partido nem de um governo. É a minha visão, ainda em construção, e por isso fica aberta a comentários.</p>
     <p class="assina">Gustavo Molino</p>
-  </aside>
+    <button type="button" class="voz-hero" data-voz><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11h-2Z"/></svg><span><b>Diga o que você acha</b><small>Grave um comentário de até 2 minutos.</small></span></button>
+  </div>
 
-  <h2 class="section-title">Quem somos e quem seremos</h2>
-  <p>Antes de qualquer política, o plano olha para a população. O Brasil está envelhecendo rápido, e os próximos 15 anos são a última fase com muita gente em idade de trabalhar para cada idoso.</p>
+  <h2 class="section-title">O que é o plano</h2>
+  <p>Um plano para 2027 a 2040, a primeira etapa de uma visão até 2070. Ele começa por quem é o brasileiro e segue área por área, com metas que dá para medir e cobrar. Três regras valem para todas as páginas:</p>
+  <ol class="princ">
+    <li><b>População primeiro</b><p>Toda meta por aluno, trabalhador ou habitante usa os números de <a href="#brasileiro">Quem é o brasileiro</a>.</p></li>
+    <li><b>Continuidade</b><p>Toda área parte do que já existe. O que funciona é mantido e ampliado, o que falha é corrigido com nome e número, e nada é proposto como novo se já está acontecendo.</p></li>
+    <li><b>Medir e cobrar</b><p>Cada proposta tem código, número, quem paga e riscos, e as metas passam por revisões públicas em 2030 e 2035.</p></li>
+  </ol>
+  <p class="note">O texto segue a mesma regra em todo o plano: frases curtas, números com ano e fonte, termos explicados e crítica a programas, não a pessoas.</p>
+
+  <h2 class="section-title">De onde partimos</h2>
+  <p>O Brasil está envelhecendo rápido. Os próximos 15 anos são a última fase com muita gente em idade de trabalhar para cada idoso, e por isso o plano vai até 2040.</p>
   <div class="ratio" role="img" aria-label="Pessoas em idade de trabalhar para cada pessoa com 65 anos ou mais: 5,8 hoje, 3,7 em 2040 e 1,8 em 2070">
     <p class="cap">Pessoas em idade de trabalhar para cada pessoa com 65 anos ou mais</p>
     <ol aria-hidden="true">
@@ -418,8 +430,8 @@ footer{padding-bottom:84px}
   </div>
   <p><a class="cta" href="#brasileiro">Ler Quem é o brasileiro →</a></p>
 
-  <h2 class="section-title">O que muda até 2040</h2>
-  <p>Uma meta de cada área, para dar a medida do plano.</p>
+  <h2 class="section-title">Aonde queremos chegar</h2>
+  <p>Quatro metas para 2040 que dão a medida do plano.</p>
   <ol class="goals">
     <li><span class="fig">95%</span><span class="txt"><em class="tag">Educação</em>das crianças alfabetizadas ao fim do 2º ano<small>hoje, 66%</small></span></li>
     <li><span class="fig">70%</span><span class="txt"><em class="tag">Saúde</em>do que o SUS compra produzido no Brasil<small>hoje, cerca de 40%</small></span></li>
@@ -428,8 +440,8 @@ footer{padding-bottom:84px}
   </ol>
   <p class="note">Os números de partida são aproximados e ainda estão sendo conferidos com as fontes oficiais.</p>
 
-  <h2 class="section-title">Linha do tempo</h2>
-  <p>A transição demográfica do Brasil leva 45 anos. O plano trabalha em etapas de 15 anos, com revisão pública a cada 5.</p>
+  <h2 class="section-title">Em que ritmo</h2>
+  <p>O plano trabalha em etapas de 15 anos, com revisão pública a cada 5.</p>
   <ol class="timeline home-tl">
     <li class="phase now"><p class="years">Fase 1 · 2027–2040</p><h4>A última janela</h4>
       <ul>
@@ -442,45 +454,35 @@ footer{padding-bottom:84px}
     <li class="phase"><p class="years">Fase 3 · 2056–2070</p><h4>Sociedade superenvelhecida</h4><p>1,8 pessoa em idade de trabalhar para cada idoso.</p></li>
   </ol>
 
-  <h2 class="section-title">Como o plano funciona</h2>
-  <ol class="princ">
-    <li><b>População primeiro</b><p>Toda meta por aluno, trabalhador ou habitante usa os números de <a href="#brasileiro">Quem é o brasileiro</a>.</p></li>
-    <li><b>Continuidade</b><p>Toda área parte do que já existe. O que funciona é mantido e ampliado, o que falha é corrigido com nome e número, e nada é proposto como novo se já está acontecendo.</p></li>
-    <li><b>Medir e cobrar</b><p>Cada proposta tem código, número, quem paga e riscos, e as metas passam por revisões públicas em 2030 e 2035.</p></li>
-  </ol>
-  <p>O jeito de escrever é o mesmo em todas as páginas: frases curtas, números com ano e fonte, termos explicados e crítica a programas, não a pessoas.</p>
-
-  <h2 class="section-title">As áreas</h2>
-  <p>O plano cobre 16 áreas de governo, e a indústria é o eixo que as conecta. Cada área tem uma página com o mesmo roteiro: diagnóstico, medidas, metas, conexões com as outras áreas e riscos.</p>
+  <h2 class="section-title">O plano, área por área</h2>
+  <p>O plano vai cobrir 16 áreas de governo, ligadas pela indústria. Cada página abre com um resumo de 2 minutos e termina com as propostas em fichas numeradas.</p>
+  <h3 class="sub-title">Já escritas</h3>
   <ul class="areas">
-<li class="area ready"><a href="#brasileiro"><span class="n">↳</span><span class="t"><b>Quem é o brasileiro</b><span>Hoje, 2040 e 2070: a população que define cada meta</span></span><span class="st">Ler</span></a></li>
-<li class="area ready"><a href="#industria"><span class="n">00</span><span class="t"><b>Plano industrial 2027–2040</b><span>Define setores, metas e cronograma que as outras áreas apoiam</span></span><span class="st">Ler</span></a></li>
-<li class="area ready sub"><a href="#nib"><span class="n">+</span><span class="t"><b>Nova Indústria Brasil</b><span>O que herdamos da política atual e as dez correções</span></span><span class="st">Ler</span></a></li>
-<li class="area ready"><a href="#educacao"><span class="n">01</span><span class="t"><b>Educação</b><span>Forma os técnicos, engenheiros e pesquisadores que as missões vão empregar</span></span><span class="st">Ler</span></a></li>
-<li class="area ready"><a href="#saude"><span class="n">02</span><span class="t"><b>Saúde</b><span>Compras do SUS sustentam o complexo industrial da saúde; trabalhador saudável produz mais</span></span><span class="st">Ler</span></a></li>
-<li class="area"><div><span class="n">03</span><span class="t"><b>Tributação</b><span>Reduz o custo de produzir, investir e exportar</span></span><span class="st">Em breve</span></div></li>
-<li class="area"><div><span class="n">04</span><span class="t"><b>Finanças públicas e macroeconomia</b><span>Juros e câmbio compatíveis com investimento de longo prazo</span></span><span class="st">Em breve</span></div></li>
-<li class="area"><div><span class="n">05</span><span class="t"><b>Ciência, tecnologia e inovação</b><span>Gera a tecnologia própria das missões</span></span><span class="st">Em breve</span></div></li>
-<li class="area"><div><span class="n">06</span><span class="t"><b>Energia e meio ambiente</b><span>Energia limpa e barata como vantagem competitiva</span></span><span class="st">Em breve</span></div></li>
-<li class="area"><div><span class="n">07</span><span class="t"><b>Segurança pública</b><span>Reduz o custo do crime para empresas e cargas e protege investimentos</span></span><span class="st">Em breve</span></div></li>
-<li class="area"><div><span class="n">08</span><span class="t"><b>Infraestrutura e cidades</b><span>Logística, moradia e transporte perto dos polos industriais</span></span><span class="st">Em breve</span></div></li>
-<li class="area"><div><span class="n">09</span><span class="t"><b>Trabalho</b><span>Empregos de qualidade e apoio a quem muda de setor</span></span><span class="st">Em breve</span></div></li>
-<li class="area"><div><span class="n">10</span><span class="t"><b>Proteção social</b><span>Protege a renda das famílias pobres e liga o benefício à escola, à saúde e ao emprego</span></span><span class="st">Em breve</span></div></li>
-<li class="area ready"><a href="#gasto"><span class="n">11</span><span class="t"><b>Gasto público e Estado</b><span>Faz o Estado cumprir as próprias regras de gasto, a começar pelo teto de salário, para que o dinheiro público chegue ao plano</span></span><span class="st">Ler</span></a></li>
-<li class="area"><div><span class="n">12</span><span class="t"><b>Desenvolvimento regional</b><span>Distribui os polos industriais pelo país</span></span><span class="st">Em breve</span></div></li>
-<li class="area"><div><span class="n">13</span><span class="t"><b>Agricultura e bioeconomia</b><span>Matéria-prima e demanda para a agroindústria e as máquinas</span></span><span class="st">Em breve</span></div></li>
-<li class="area"><div><span class="n">14</span><span class="t"><b>Política externa, comércio e defesa</b><span>Mercados, acordos, tecnologia e base industrial de defesa</span></span><span class="st">Em breve</span></div></li>
-<li class="area"><div><span class="n">15</span><span class="t"><b>Gestão pública e instituições</b><span>Um Estado capaz de executar, medir e corrigir o plano</span></span><span class="st">Em breve</span></div></li>
+<li class="area ready"><a href="#brasileiro"><span class="n">→</span><span class="t"><b>Quem é o brasileiro</b><span>Hoje, 2040 e 2070: a população que define cada meta</span></span><span class="st">Ler</span></a></li>
+<li class="area ready"><a href="#industria"><span class="n">→</span><span class="t"><b>Plano industrial 2027–2040</b><span>Define setores, metas e cronograma que as outras áreas apoiam</span><span class="codes">Propostas IND-01 a 11</span></span><span class="st">Ler</span></a></li>
+<li class="area ready sub"><a href="#nib"><span class="n">→</span><span class="t"><b>Nova Indústria Brasil</b><span>O que herdamos da política atual e as dez correções</span></span><span class="st">Ler</span></a></li>
+<li class="area ready"><a href="#educacao"><span class="n">→</span><span class="t"><b>Educação</b><span>Forma os técnicos, engenheiros e pesquisadores que as missões vão empregar</span><span class="codes">Propostas EDU-01 a 09</span></span><span class="st">Ler</span></a></li>
+<li class="area ready"><a href="#saude"><span class="n">→</span><span class="t"><b>Saúde</b><span>Compras do SUS sustentam o complexo industrial da saúde; trabalhador saudável produz mais</span><span class="codes">Propostas SAU-01 a 09</span></span><span class="st">Ler</span></a></li>
+<li class="area ready"><a href="#gasto"><span class="n">→</span><span class="t"><b>Gasto público e Estado</b><span>Faz o Estado cumprir as próprias regras de gasto, a começar pelo teto de salário, para que o dinheiro público chegue ao plano</span><span class="codes">Propostas GP-01 a 08</span></span><span class="st">Ler</span></a></li>
   </ul>
-
-  <h2 class="section-title">Por onde começar</h2>
-  <p>Cada página abre com um resumo de 2 minutos. No fim estão as propostas em fichas numeradas, cada uma com o que muda, o número, para quem é, quem paga e os riscos.</p>
+  <h3 class="sub-title">Em elaboração</h3>
+  <ul class="soon">
+<li>Tributação</li>
+<li>Finanças públicas e macroeconomia</li>
+<li>Ciência, tecnologia e inovação</li>
+<li>Energia e meio ambiente</li>
+<li>Segurança pública</li>
+<li>Infraestrutura e cidades</li>
+<li>Trabalho</li>
+<li>Proteção social</li>
+<li>Desenvolvimento regional</li>
+<li>Agricultura e bioeconomia</li>
+<li>Política externa, comércio e defesa</li>
+<li>Gestão pública e instituições</li>
+  </ul>
+  <h3 class="sub-title">Para consultar</h3>
   <ul class="starts">
-    <li><a href="#industria" data-target="industria-propostas"><b>IND-01 a 11</b><span>Propostas da indústria</span></a></li>
-    <li><a href="#educacao" data-target="educacao-propostas"><b>EDU-01 a 09</b><span>Propostas da educação</span></a></li>
-    <li><a href="#saude" data-target="saude-propostas"><b>SAU-01 a 09</b><span>Propostas da saúde</span></a></li>
-    <li><a href="#gasto" data-target="gasto-propostas"><b>GP-01 a 08</b><span>Propostas de gasto público</span></a></li>
-    <li><a href="#palavras"><b>Glossário</b><span>Siglas e termos do plano</span></a></li>
+    <li><a href="#palavras"><b>Palavras do plano</b><span>Siglas e termos explicados</span></a></li>
     <li><a href="#gatilhos"><b>Gatilhos</b><span>Como uma área puxa as outras</span></a></li>
   </ul>
 </section>
@@ -2214,6 +2216,8 @@ footer{padding-bottom:84px}
 </table></div></article>
 <nav class="pager"><a href="#gatilhos" class="prev"><small>Anterior</small>Gatilhos entre as áreas</a><a href="#inicio" class="next"><small>Próxima</small>Início</a></nav>
 </section>
+
+<script>(function(){var h=document.querySelector('.carta .voz-hero'),v=document.getElementById('v-inicio');if(!h)return;function u(){document.documentElement.classList.toggle('hero-voz',!v.hidden&&h.getBoundingClientRect().bottom>0)}addEventListener('scroll',u,{passive:true});addEventListener('hashchange',function(){setTimeout(u,50)});u();setTimeout(u,300)})();</script>
 
 <section class="view page" id="v-comentarios" data-view="comentarios" hidden>
 <header class="page-head"><p class="eyebrow">O que as pessoas disseram</p><h1>Comentários</h1></header>
